@@ -1,0 +1,441 @@
+{
+    // ----------------------------- VSCode Settings -----------------------------
+    "window.newWindowProfile": "默认", //新窗口配置文件
+    "files.associations": {
+        "*.vue": "vue",
+        "*.wpy": "vue",
+        "*.wxml": "html",
+        "*.wxss": "css"
+    }, //文件关联
+    "workbench.list.smoothScrolling": true, //列表和树的平滑滚动
+    "workbench.iconTheme": "a-file-icon-vscode", //
+    "terminal.integrated.smoothScrolling": true, //终端的平滑滚动
+    "files.autoSave": "onFocusChange", //失去焦点自动保存
+    "files.autoSaveDelay": 200, //自动保存延迟
+    "workbench.tree.stickyScrollMaxItemCount": 10, //树的最大滚动条数
+    "debug.onTaskErrors": "debugAnyway", //调试时忽略异常
+    "security.workspace.trust.untrustedFiles": "open", //打开不受信任的文件
+    "window.dialogStyle": "custom", //自定义对话框
+    "workbench.editor.wrapTabs": true, //标签栏换行
+    "workbench.tree.indent": 40, //树的缩进
+    "workbench.tree.renderIndentGuides": "always", //树的缩进指南
+    "workbench.editor.showTabs": "multiple", //显示标签的方式
+    "workbench.startupEditor": "none", //禁用预览
+    "update.showReleaseNotes": false, //更新后显示更新日志
+    "workbench.colorTheme": "Winter is Coming (Dark Black)", //边栏位置
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily",
+        "workbench.list.horizontalScrolling"
+    ], //应用到所有配置文件的配置
+    "workbench.list.horizontalScrolling": true, //列表和树水平滚动
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "file:/**/*.xlsx": "default",
+        "file:/**/*.csv": "default",
+        "*.xlsx": "cweijan.officeViewer"
+    }, //编辑器更优先的选择
+    // ----------------------------- Git Settings -----------------------------
+    "git.enableSmartCommit": true, //在没有暂存的情况下直接提交
+    "git.autofetch": true, //自动抓取
+    "git.confirmSync": false, //同步时不再提示
+    "git.openRepositoryInParentFolders": "never", //不再打开父文件夹
+    "git.ignoreWindowsGit27Warning": true, //忽略git27警告
+    "git.terminalAuthentication": false, //终端身份验证
+    // ----------------------------- Emmet Settings -----------------------------
+    "emmet.triggerExpansionOnTab": true, //Tab触发
+    "emmet.showAbbreviationSuggestions": true, //显示缩写建议
+    "emmet.showExpandedAbbreviation": "always", //显示展开的缩写
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "wpy": "html"
+    }, //包含的语言
+    // ----------------------------- Terminal Settings -----------------------------
+    "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
+    "terminal.integrated.fontLigatures.enabled": true, //终端字体连字
+    "terminal.integrated.fontFamily": "", //终端字体
+    // "terminal.integrated.profiles.windows": {
+    //     "Ubuntu-22.04 (WSL)": {
+    //         "path": "C:\\Windows\\System32\\wsl.exe",
+    //         "args": [],
+    //         "icon": "terminal-bash"
+    //     }
+    // }, //wsl终端
+    "terminal.integrated.inheritEnv": false, //继承环境变量
+    "terminal.integrated.defaultProfile.linux": "zsh", //默认终端
+    // ----------------------------- Explorer Settings -----------------------------
+    "explorer.confirmDelete": false, //删除时不再提示
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js": {
+            "when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作空中
+        },
+        "**/node_modules": true
+    }, //排除的文件夹
+    "explorer.compactFolders": true, //对于单文件路径，是否允许折叠
+    // ----------------------------- Editor Settings -----------------------------
+    "editor.defaultFormatter": "esbenp.prettier-vscode", //启用prettier-vscode进行格式化
+    "editor.fontSize": 14, //字体大小
+    "editor.wordWrap": "on", //自动换行
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true, //独立颜色池
+    "editor.guides.bracketPairsHorizontal": true, //水平括号对参考线
+    "editor.fontLigatures": true, //字体连字
+    "editor.formatOnSave": true, //保存时格式化
+    "editor.fontFamily": "'Fira Code','Maple Mono','Cousine Nerd Font','Hack NF','JetBrains Mono'", //字体
+    "editor.detectIndentation": false, //自动检测缩进,控制全局缩进为"editor.tabSize"
+    "editor.tabSize": 4, //Tab大小
+    "editor.rulers": [], //不显示竖线
+    "editor.renderControlCharacters": true, //显示控制字符
+    "editor.smoothScrolling": true, //平滑滚动
+    "editor.cursorSmoothCaretAnimation": "on", //光标动画
+    "editor.stickyScroll.maxLineCount": 20, //滚动条数
+    "diffEditor.wordWrap": "on", //在视区宽度处折行
+    "editor.minimap.enabled": false, //显示缩略图
+    "editor.cursorBlinking": "smooth", //光标闪烁
+    "editor.cursorStyle": "line", //光标样式
+    "editor.guides.bracketPairs": true, //括弧对参考线
+    "editor.mouseWheelZoom": true, //鼠标滚轮缩放
+    "editor.renderWhitespace": "all", //高亮非基本ASCII字符
+    "diffEditor.maxComputationTime": 0, //差异编辑器最大计算时间，0表示无限制
+    "editor.inlayHints.fontFamily": "", //编辑器中嵌入提示的字体,为空则转为editor.fontFamily
+    "editor.minimap.renderCharacters": false, //禁止缩略图渲染实际字符，而只是渲染色块
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    }, //禁止因为内联建议的代码移动
+    "editor.formatOnPaste": true, //粘贴时格式化
+    "editor.formatOnType": true, //输入时格式化
+    "editor.inlineSuggest.edits.allowCodeShifting": "always", //允许代码移动
+    // ----------------------------- Search Settings -----------------------------
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/target": true,
+        "**/logs": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/.vscode": true,
+        "**/.history": true,
+        "**__pytcache__": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/.vscode-test": true
+    }, //搜索时排除的文件夹
+    // ----------------------------- Cmake Settings -----------------------------
+    "cmake.configureOnOpen": true, //打开时配置
+    "cmake.additionalCompilerSearchDirs": ["/usr/bin"], //额外的编译器搜索目录
+    "cmake.generator": "Ninja", //生成器
+    "cmake.buildDirectory": "${workspaceFolder}/build", //构建目录
+    // ----------------------------- CodeSnap Settings -----------------------------
+    "codesnap.backgroundColor": "#f2f2f2", //背景颜色
+    "codesnap.boxShadow": "5px 5px 60px 0px #888888", //阴影
+    "codesnap.containerPadding": "3em", //容器内边距
+    "codesnap.roundedCorners": true, //圆角
+    "codesnap.showWindowControls": false, //显示窗口控制按钮
+    "codesnap.showWindowTitle": true, //显示窗口标题
+    "codesnap.showLineNumbers": true, //显示行号
+    "codesnap.realLineNumbers": true, //使用真实行号
+    "codesnap.transparentBackground": false, //透明背景
+    "codesnap.target": "container", //有无容器
+    // ----------------------------- C/C++ Settings -----------------------------
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true, //默认的编译器路径
+    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true, //强制转换后的空格
+    "C_Cpp.vcFormat.space.beforeComma": true, //逗号前的空格
+    "C_Cpp.vcFormat.space.beforeEmptySquareBrackets": true, //空方括号前的空格
+    "C_Cpp.vcFormat.space.beforeFunctionOpenParenthesis": "insert", //函数括号前的空格
+    "C_Cpp.vcFormat.space.beforeInitializerListOpenBrace": true, //初始化列表前的空格
+    "C_Cpp.vcFormat.space.beforeLambdaOpenParenthesis": true, //Lambda括号前的空格
+    "C_Cpp.vcFormat.space.beforeOpenSquareBracket": true, //方括号前的空格
+    "C_Cpp.vcFormat.space.betweenEmptyBraces": true, //空大括号之间的空格
+    "C_Cpp.vcFormat.space.betweenEmptyLambdaBrackets": true, //空Lambda括号之间的空格
+    "C_Cpp.vcFormat.space.betweenEmptyParameterListParentheses": true, //空参数列表括号之间的空格
+    "C_Cpp.vcFormat.space.betweenEmptySquareBrackets": true, //空方括号之间的空格
+    "C_Cpp.vcFormat.space.insertAfterSemicolon": true, //分号后的空格
+    "C_Cpp.vcFormat.space.withinCastParentheses": true, //强制转换括号内的空格
+    "C_Cpp.vcFormat.space.withinControlFlowStatementParentheses": true, //控制流语句括号内的空格
+    "C_Cpp.vcFormat.space.withinExpressionParentheses": true, //表达式括号内的空格
+    "C_Cpp.vcFormat.space.withinLambdaBrackets": true, //Lambda括号内的空格
+    "C_Cpp.vcFormat.space.withinParameterListParentheses": true, //参数列表括号内的空格
+    "C_Cpp.vcFormat.space.withinSquareBrackets": true, //方括号内的空格
+    "C_Cpp.intelliSenseEngine": "default", //itelliSense引擎
+    "C_Cpp.formatting": "clangFormat", //格式化
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools", //默认的配置提供者
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true, //自动推导变量类型
+    "C_Cpp.inlayHints.parameterNames.enabled": true, //函数参数名
+    "C_Cpp.inlayHints.referenceOperator.enabled": true, //引用操作符
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true, //引用操作符后的空格
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine", //块前的换行
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine", //函数前的换行
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine", //Lambda前的换行
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "newLine", //命名空间前的换行
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine", //类型前的换行
+    "C_Cpp.vcFormat.newLine.beforeWhileInDoWhile": true, //do-while循环中while前的换行
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true, //空函数体的右大括号同行
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true, //空类型体的右大括号同行
+    //------------------------------ Css Settings ----------------------------------
+    "css.format.spaceAroundSelectorSeparator": true, //选择器分隔符周围的空格
+    //------------------------------ LaTeX Settings ----------------------------------
+    "latex-workshop.latex.autoBuild.run": "never", // 设置是否自动编译
+    "latex-workshop.showContextMenu": true, //右键菜单
+    "latex-workshop.intellisense.package.enabled": true, //从使用的包中自动补全命令和环境
+    "latex-workshop.message.error.show": false, //编译出错时设置是否弹出气泡设置
+    "latex-workshop.message.warning.show": false, //编译警告时设置是否弹出气泡设置
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": ["%DOCFILE%"]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": ["%DOCFILE%"]
+        }
+    ], // 编译工具和命令
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": ["xelatex"]
+        },
+        {
+            "name": "XeLaTeX^2",
+            "tools": ["xelatex", "xelatex"]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": ["pdflatex"]
+        },
+        {
+            "name": "BibTeX",
+            "tools": ["bibtex"]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": ["latexmk"]
+        },
+        {
+            "name": "XeLaTeX -> BibTeX -> XeLaTeX^2",
+            "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+        },
+        {
+            "name": "XeLaTeX -> Biber -> XeLaTeX^2",
+            "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+        },
+        {
+            "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2",
+            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+        },
+        {
+            "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2",
+            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+        }
+    ], // 编译链
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+    ], //文件清理
+    "latex-workshop.latex.autoClean.run": "onFailed", //清除辅助文件
+    "latex-workshop.latex.recipe.default": "lastUsed", // 使用上次的编译链
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // 内部查看器反向搜索快捷键
+    "latex-workshop.view.pdf.ref.viewer": "auto", //ref的查看方式，设置为外部
+    "latex-workshop.latex.outDir": "%DIR%", //输出目录
+    "latex-workshop.view.pdf.viewer": "external", //外部查看器
+    "latex-workshop.view.pdf.external.viewer.command": "okular", //外部查看器命令
+    "latex-workshop.view.pdf.external.viewer.args": ["--unique", "%PDF%"],
+    "latex-workshop.view.pdf.external.synctex.command": "okular", //外部查看器反向搜索命令
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "--unique",
+        "%PDF%#src:%LINE%%TEX%"
+    ], //反向搜索命令
+    "latex-workshop.formatting.latex": "latexindent", //格式化工具
+    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/x86_64-linux/latexindent", //格式化工具路径
+    "latex-workshop.formatting.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent:'    '",
+        "-l",
+        "%WORKSPACE_FOLDER%/.latexindent.yaml",
+        "-m",
+        "-g=/dev/null"
+    ], //格式化工具参数
+    // ----------------------------- Github Copilot Settings -----------------------------
+    "github.copilot.chat.followUps": "always", //建议的跟进
+    "editor.tabCompletion": "on", //启用连续tab建议
+    "github.copilot.enable": {
+        "markdown": true,
+        "plaintext": true,
+        "python": true,
+        "typescript": true,
+        "javascript": true,
+        "html": true,
+        "css": true,
+        "json": true,
+        "c": true,
+        "cpp": true,
+        "java": true,
+        "php": true,
+        "ruby": true,
+        "go": true,
+        "rust": true,
+        "shell": true,
+        "sql": true,
+        "swift": true,
+        "vue": true,
+        "yaml": true
+    }, //启用或禁用特定语言的copilot
+    "github.copilot.chat.scopeSelection": true, //启用范围选择
+    "github.copilot.chat.editor.temporalContext.enabled": true, //启用时间上下文
+    "github.copilot.chat.edits.temporalContext.enabled": true, //启用时间上下文
+    "github.copilot.chat.generateTests.codeLens": true, //生成测试代码
+    "github.copilot.chat.languageContext.typescript.enabled": true, //启用typescript上下文
+    "github.copilot.nextEditSuggestions.enabled": true, //启用下一个编辑建议
+    "chat.agent.enabled": true, //启用聊天代理
+    "github.copilot.chat.codesearch.enabled": true, //启用代码搜索
+    "github.copilot.chat.agent.thinkingTool": true, //启用思考工具
+    // ----------------------------- Remote SSH Settings -----------------------------
+    "remote.SSH.remotePlatform": {
+        "LinuxServer": "linux"
+    }, //远程SSH平台
+    "remote.autoForwardPorts": false, //自动转发端口
+    // ----------------------------- Instead Settings -----------------------------
+    //针对某种语言，特定地设置一些配置
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools" //pretier-vscode不适用于c
+    }, //C特定配置
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools" //pretier-vscode不适用于cpp
+    }, //C++特定配置
+    "[python]": {}, //python特定配置
+    "[html]": {}, //html特定配置
+    "[vue]": {}, //vue特定配置
+    "[javascript]": {}, //javascript特定配置
+    "[typescript]": {}, //typescript特定配置
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java" //java使用redhat.java进行格式化
+    }, //java特定配置
+    "[tex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.tabSize": 4
+    }, //tex特定配置
+    "[json]": {}, //json特定配置
+    "[jsonc]": {}, //jsonc特定配置
+    "[scss]": {}, //scss特定配置
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.formatOnSave": true,
+        "editor.suggestSelection": "recentlyUsedByPrefix"
+    }, //latex特定配置
+    "[typst]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" //分隔符
+    }, //Typst特定配置
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" //分隔符
+    }, //Typst Code特定配置
+    // ----------------------------- Sync Settings -----------------------------
+
+    "settingsSync.ignoredSettings": ["-C_Cpp.clang_format_path"], //忽略的设置
+    "redhat.telemetry.enabled": true, //允许发送遥测数据
+    // ----------------------------- JavaScript Settings -----------------------------
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "node"
+    }, //启动配置
+    // ----------------------------- Python Settings -----------------------------
+    "python.analysis.aiCodeActions": {
+        "implementAbstractClasses": true
+    }, //AI代码操作
+    "python.analysis.autoFormatStrings": true, //输入大括号时补全f
+    "python.analysis.inlayHints.callArgumentNames": "all", //函数参数的提示
+    "python.analysis.inlayHints.functionReturnTypes": true, //函数返回类型的提示
+    "python.analysis.inlayHints.pytestParameters": true, //函数参数类型的提示
+    "python.analysis.inlayHints.variableTypes": true,
+    "debugpy.debugJustMyCode": true, //调试时是否仅允许自己代码
+    // ----------------------------- Typst Settings -----------------------------
+    "tinymist.formatterMode": "typstyle", //格式化模式
+    // ----------------------------- VSCode Icons Settings ----------------------------
+    "vsicons.dontShowNewVersionMessage": true, //不显示新版本消息
+    // ----------------------------- Background Cover Settings -----------------------------
+    "backgroundCover.imagePath": "", //背景图片路径
+    "backgroundCover.randomImageFolder": "f:\\pictures\\wallpaper", //随机图片文件夹
+    // ----------------------------- Mastmasm Settings -----------------------------
+    "masmtasm.ASM.emulator": "dosbox",
+    "masmtasm.ASM.assembler": "TASM",
+    // ----------------------------- GitLens Settings -----------------------------
+    "gitlens.detectNestedRepositories": true,
+    // ----------------------------- VSCode Office Settings -----------------------------
+    "vscode-office.openOutline": false, //打开Markdown大纲
+    "vscode-office.editorTheme": "Auto", //Markdown编辑器主题
+    // ----------------------------- Prettier-vscode Settings -----------------------------
+    "prettier.tabWidth": 4, //tab为4个空格
+    "prettier.useTabs": false, //插入标记
+    "prettier.proseWrap": "preserve", //换行
+    "prettier.bracketSameLine": true, //大括号在同一行
+    "prettier.singleAttributePerLine": true, //每行一个属性
+    // ----------------------------- CPH Settings -----------------------------
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.firstTime": false,
+    "cph.language.cpp.Args": "-std=c++17 -O2",
+    // ----------------------------- Java Settings -----------------------------
+    "java.debug.settings.showStaticVariables": true,
+    "java.debug.settings.showQualifiedNames": true,
+    "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml",
+    // ----------------------------- Github Pull Request ----------------------
+    "githubPullRequests.createOnPublishBranch": "never"
+    // ----------------------------- New Settings -----------------------------
+}
