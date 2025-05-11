@@ -1,17 +1,17 @@
 {
-    // ----------------------------- VSCode Settings -----------------------------
-    "window.newWindowProfile": "默认", //新窗口配置文件
     "files.associations": {
         "*.vue": "vue",
         "*.wpy": "vue",
         "*.wxml": "html",
         "*.wxss": "css"
     }, //文件关联
-    "workbench.list.smoothScrolling": true, //列表和树的平滑滚动
-    "workbench.iconTheme": "a-file-icon-vscode", //
+    "workbench.list.smoothScrolling": true, //
+    "workbench.iconTheme": "ayu", //文件图标
     "terminal.integrated.smoothScrolling": true, //终端的平滑滚动
     "files.autoSave": "onFocusChange", //失去焦点自动保存
-    "files.autoSaveDelay": 200, //自动保存延迟
+    "files.autoSaveDelay": 200, //自动保存
+    "workbench.productIconTheme": "bongocat", //图标主题
+    "workbench.colorTheme": "Night Owl (No Italics)", //主题
     "workbench.tree.stickyScrollMaxItemCount": 10, //树的最大滚动条数
     "debug.onTaskErrors": "debugAnyway", //调试时忽略异常
     "security.workspace.trust.untrustedFiles": "open", //打开不受信任的文件
@@ -21,8 +21,7 @@
     "workbench.tree.renderIndentGuides": "always", //树的缩进指南
     "workbench.editor.showTabs": "multiple", //显示标签的方式
     "workbench.startupEditor": "none", //禁用预览
-    "update.showReleaseNotes": false, //更新后显示更新日志
-    "workbench.colorTheme": "Winter is Coming (Dark Black)", //边栏位置
+    "update.showReleaseNotes": false, //边栏位置
     "workbench.settings.applyToAllProfiles": [
         "editor.fontFamily",
         "workbench.list.horizontalScrolling"
@@ -32,7 +31,9 @@
         "*.copilotmd": "vscode.markdown.preview.editor",
         "file:/**/*.xlsx": "default",
         "file:/**/*.csv": "default",
-        "*.xlsx": "cweijan.officeViewer"
+        "*.xlsx": "cweijan.officeViewer",
+        "*.cdb": "default",
+        "*.md": "cweijan.markdownViewer.optional"
     }, //编辑器更优先的选择
     // ----------------------------- Git Settings -----------------------------
     "git.enableSmartCommit": true, //在没有暂存的情况下直接提交
@@ -349,10 +350,17 @@
     "chat.agent.enabled": true, //启用聊天代理
     "github.copilot.chat.codesearch.enabled": true, //启用代码搜索
     "github.copilot.chat.agent.thinkingTool": true, //启用思考工具
-    // ----------------------------- Remote SSH Settings -----------------------------
+    // "github.copilot.advanced": {
+    //     // "authProvider": "github-enterprise"
+    // }, //
+    // ----------------------------- Remote Settings -----------------------------
     "remote.SSH.remotePlatform": {
         "LinuxServer": "linux"
     }, //远程SSH平台
+    "remote.extensionKind": {
+        "GitHub.copilot": ["ui"],
+        "GitHub.copilot-chat": "ui"
+    },
     "remote.autoForwardPorts": false, //自动转发端口
     // ----------------------------- Instead Settings -----------------------------
     //针对某种语言，特定地设置一些配置
@@ -436,6 +444,8 @@
     "java.debug.settings.showQualifiedNames": true,
     "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml",
     // ----------------------------- Github Pull Request ----------------------
-    "githubPullRequests.createOnPublishBranch": "never"
+    "githubPullRequests.createOnPublishBranch": "never",
+    "chat.editing.confirmEditRequestRetry": false
+
     // ----------------------------- New Settings -----------------------------
 }
