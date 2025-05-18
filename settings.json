@@ -5,13 +5,13 @@
         "*.wxml": "html",
         "*.wxss": "css"
     }, //文件关联
-    "workbench.list.smoothScrolling": true, //
-    "workbench.iconTheme": "ayu", //文件图标
+    "workbench.list.smoothScrolling": true, //平滑滚动
+    "workbench.iconTheme": "material-icon-theme", //文件图标
     "terminal.integrated.smoothScrolling": true, //终端的平滑滚动
     "files.autoSave": "onFocusChange", //失去焦点自动保存
     "files.autoSaveDelay": 200, //自动保存
-    "workbench.productIconTheme": "bongocat", //图标主题
-    "workbench.colorTheme": "Night Owl (No Italics)", //主题
+    "workbench.productIconTheme": "bongocat", //图标
+    "workbench.colorTheme": "Shades of Purple (Super Dark)", //主题
     "workbench.tree.stickyScrollMaxItemCount": 10, //树的最大滚动条数
     "debug.onTaskErrors": "debugAnyway", //调试时忽略异常
     "security.workspace.trust.untrustedFiles": "open", //打开不受信任的文件
@@ -134,6 +134,7 @@
     "cmake.additionalCompilerSearchDirs": ["/usr/bin"], //额外的编译器搜索目录
     "cmake.generator": "Ninja", //生成器
     "cmake.buildDirectory": "${workspaceFolder}/build", //构建目录
+    "cmake.showNotAllDocumentsSavedQuestion": false, //
     // ----------------------------- CodeSnap Settings -----------------------------
     "codesnap.backgroundColor": "#f2f2f2", //背景颜色
     "codesnap.boxShadow": "5px 5px 60px 0px #888888", //阴影
@@ -359,7 +360,7 @@
     }, //远程SSH平台
     "remote.extensionKind": {
         "GitHub.copilot": ["ui"],
-        "GitHub.copilot-chat": "ui"
+        "GitHub.copilot-chat": ["ui"]
     },
     "remote.autoForwardPorts": false, //自动转发端口
     // ----------------------------- Instead Settings -----------------------------
@@ -414,6 +415,7 @@
     "python.analysis.inlayHints.pytestParameters": true, //函数参数类型的提示
     "python.analysis.inlayHints.variableTypes": true,
     "debugpy.debugJustMyCode": true, //调试时是否仅允许自己代码
+    "python.analysis.typeCheckingMode": "standard",
     // ----------------------------- Typst Settings -----------------------------
     "tinymist.formatterMode": "typstyle", //格式化模式
     // ----------------------------- VSCode Icons Settings ----------------------------
@@ -427,7 +429,7 @@
     // ----------------------------- GitLens Settings -----------------------------
     "gitlens.detectNestedRepositories": true,
     // ----------------------------- VSCode Office Settings -----------------------------
-    "vscode-office.openOutline": false, //打开Markdown大纲
+    "vscode-office.openOutline": true, //打开Markdown大纲
     "vscode-office.editorTheme": "Auto", //Markdown编辑器主题
     // ----------------------------- Prettier-vscode Settings -----------------------------
     "prettier.tabWidth": 4, //tab为4个空格
@@ -445,7 +447,43 @@
     "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml",
     // ----------------------------- Github Pull Request ----------------------
     "githubPullRequests.createOnPublishBranch": "never",
-    "chat.editing.confirmEditRequestRetry": false
+    "chat.editing.confirmEditRequestRetry": false,
+
+    // ----------------------------- MCP Settings -----------------------------
+    "chat.mcp.enabled": true,
+    "mcp": {
+        "servers": {
+            "mcp-deepwiki": {
+                "command": "npx",
+                "args": ["-y", "mcp-deepwiki@latest"],
+                "env": {
+                    "DEEPWIKI_MAX_CONCURRENCY": 10,
+                    "DEEPWIKI_REQUEST_TIMEOUT": 60000,
+                    "DEEPWIKI_MAX_RETRIES": 5,
+                    "DEEPWIKI_RETRY_DELAY": 500
+                }
+            }
+        },
+        "inputs": [
+            {
+                "type": "promptString",
+                "id": "url",
+                "description": "Starting URL of the Deepwiki repository"
+            },
+            {
+                "type": "promptString",
+                "id": "mode",
+                "description": "Output mode (aggregate/pages)",
+                "default": "aggregate"
+            },
+            {
+                "type": "promptString",
+                "id": "maxDepth",
+                "description": "Maximum depth for page crawling",
+                "default": "10"
+            }
+        ]
+    }
 
     // ----------------------------- New Settings -----------------------------
 }
