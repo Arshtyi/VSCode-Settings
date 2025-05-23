@@ -1,4 +1,6 @@
 {
+    // ----------------------------- VSCode Settings -----------------------------
+    "window.newWindowProfile": "默认", //新窗口配置文件
     "files.associations": {
         "*.vue": "vue",
         "*.wpy": "vue",
@@ -429,7 +431,7 @@
     // ----------------------------- GitLens Settings -----------------------------
     "gitlens.detectNestedRepositories": true,
     // ----------------------------- VSCode Office Settings -----------------------------
-    "vscode-office.openOutline": true, //打开Markdown大纲
+    "vscode-office.openOutline": false, //打开Markdown大纲
     "vscode-office.editorTheme": "Auto", //Markdown编辑器主题
     // ----------------------------- Prettier-vscode Settings -----------------------------
     "prettier.tabWidth": 4, //tab为4个空格
@@ -450,40 +452,41 @@
     "chat.editing.confirmEditRequestRetry": false,
 
     // ----------------------------- MCP Settings -----------------------------
-    "chat.mcp.enabled": true,
-    "mcp": {
-        "servers": {
-            "mcp-deepwiki": {
-                "command": "npx",
-                "args": ["-y", "mcp-deepwiki@latest"],
-                "env": {
-                    "DEEPWIKI_MAX_CONCURRENCY": 10,
-                    "DEEPWIKI_REQUEST_TIMEOUT": 60000,
-                    "DEEPWIKI_MAX_RETRIES": 5,
-                    "DEEPWIKI_RETRY_DELAY": 500
-                }
-            }
-        },
-        "inputs": [
-            {
-                "type": "promptString",
-                "id": "url",
-                "description": "Starting URL of the Deepwiki repository"
-            },
-            {
-                "type": "promptString",
-                "id": "mode",
-                "description": "Output mode (aggregate/pages)",
-                "default": "aggregate"
-            },
-            {
-                "type": "promptString",
-                "id": "maxDepth",
-                "description": "Maximum depth for page crawling",
-                "default": "10"
-            }
-        ]
-    }
+    "chat.mcp.enabled": true
+
+    // "mcp": {
+    //     "servers": {
+    //         "mcp-deepwiki": {
+    //             "command": "npx",
+    //             "args": ["-y", "mcp-deepwiki@latest"],
+    //             "env": {
+    //                 "DEEPWIKI_MAX_CONCURRENCY": 10,
+    //                 "DEEPWIKI_REQUEST_TIMEOUT": 60000,
+    //                 "DEEPWIKI_MAX_RETRIES": 5,
+    //                 "DEEPWIKI_RETRY_DELAY": 500
+    //             }
+    //         }
+    //     },
+    //     "inputs": [
+    //         {
+    //             "type": "promptString",
+    //             "id": "url",
+    //             "description": "Starting URL of the Deepwiki repository"
+    //         },
+    //         {
+    //             "type": "promptString",
+    //             "id": "mode",
+    //             "description": "Output mode (aggregate/pages)",
+    //             "default": "aggregate"
+    //         },
+    //         {
+    //             "type": "promptString",
+    //             "id": "maxDepth",
+    //             "description": "Maximum depth for page crawling",
+    //             "default": "10"
+    //         }
+    //     ]
+    // }
 
     // ----------------------------- New Settings -----------------------------
 }
