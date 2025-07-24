@@ -14,8 +14,7 @@
     "terminal.integrated.smoothScrolling": true, // Smooth scrolling for terminal
     "files.autoSave": "onFocusChange", // Auto save when focus changes
     "files.autoSaveDelay": 200, // Auto save delay
-    "workbench.productIconTheme": "bongocat", // Product icons theme
-    "workbench.colorTheme": "Shades of Purple (Super Dark)", // Color theme
+    "workbench.productIconTheme": "bongocat", // Color theme
     "workbench.tree.stickyScrollMaxItemCount": 10, // Max sticky scroll items
     "debug.onTaskErrors": "debugAnyway", // Debug anyway when task errors
     "security.workspace.trust.untrustedFiles": "open", // Open untrusted files
@@ -361,13 +360,7 @@
         "%WORKSPACE_FOLDER%/.latexindent.yaml",
         "-m",
         "-g=/dev/null"
-    ], // latexindent arguments
-
-    // =========================================================================
-    // GitHub Copilot Settings
-    // =========================================================================
-    "github.copilot.chat.followUps": "always", // Always show follow-ups
-    "editor.tabCompletion": "on", // Enable tab completion
+    ], // Enable tab completion
     "github.copilot.enable": {
         "markdown": true,
         "plaintext": true,
@@ -418,7 +411,8 @@
     // Remote Development Settings
     // =========================================================================
     "remote.SSH.remotePlatform": {
-        "LinuxServer": "linux"
+        "LinuxServer": "linux",
+        "154.44.26.17": "linux"
     }, // Remote SSH platform
     "remote.extensionKind": {
         "GitHub.copilot": ["ui"],
@@ -577,5 +571,15 @@
     "dotnet.inlayHints.enableInlayHintsForParameters": true, // Enable inlay hints for parameters
     "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix": true, // Suppress inlay hints for parameters that differ only by suffix
     "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName": true, // Suppress inlay hints for parameters that match argument name
-    "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent": true // Suppress inlay hints for parameters that match method intent
+    "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent": true,
+    "tinymist.formatterIndentSize": 4,
+    "editor.hover.enabled": false,
+    "editor.inlineSuggest.edits.showCollapsed": true,
+    "editor.tabCompletion": "on",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.colorTheme": "Winter is Coming (Dark Blue)" // Suppress inlay hints for parameters that match method intent
 }
