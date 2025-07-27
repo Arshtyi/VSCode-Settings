@@ -1,80 +1,50 @@
 {
     // =========================================================================
-    // VSCode Basic Settings
+    // VSCode Basic UI & Window Settings
     // =========================================================================
-    "window.newWindowProfile": "默认", // New window profile
+    "window.newWindowProfile": "默认", // Profile to use for new windows
+    "window.dialogStyle": "custom", // Custom dialog style for windows
+    "window.restoreFullscreen": true, // Restore fullscreen on launch
+
+    // =========================================================================
+    // Workbench & Appearance
+    // =========================================================================
+    "workbench.iconTheme": "material-icon-theme", // Icon theme for file explorer
+    "workbench.productIconTheme": "bongocat", // Product icon theme
+    "workbench.colorTheme": "Winter is Coming (Dark Blue)", // Color theme
+    "workbench.list.smoothScrolling": true, // Smooth scrolling for lists
+    "workbench.list.horizontalScrolling": true, // Enable horizontal scrolling in lists
+    "workbench.tree.indent": 40, // Indent width in tree explorer
+    "workbench.tree.renderIndentGuides": "always", // Show indent guides in explorer
+    "workbench.tree.stickyScrollMaxItemCount": 10, // Max sticky scroll items in tree view
+    "workbench.editor.wrapTabs": true, // Wrap tabs in editor
+    "workbench.editor.showTabs": "multiple", // Show tabs when multiple editors are open
+    "workbench.startupEditor": "none", // No welcome/startup editor
+    "workbench.editor.highlightModifiedTabs": true, // Highlight modified tabs
+    "workbench.editor.scrollToSwitchTabs": true, // Scroll to tab on switching
+    "workbench.editor.pinnedTabsOnSeparateRow": true, // Show pinned tabs on separate row
+    "workbench.editor.preferHistoryBasedLanguageDetection": true, // Prefer history for language detection
+    "workbench.editor.sharedViewState": true, // Share editor view state between editors
+    "workbench.editor.definitionLinkOpensInPeek": true, // Open definitions in peek view
+    "workbench.experimental.cloudChanges.partialMatches.enabled": true, // Enable cloud changes partial matches
+    "workbench.settings.showAISearchToggle": true, // Show AI search toggle in settings
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily",
+        "workbench.list.horizontalScrolling"
+    ], // Settings applied to all user profiles
+    "workbench.commandPalette.preserveInput": true, // Preserve input in command palette
+
+    // =========================================================================
+    // Files & Explorer
+    // =========================================================================
     "files.associations": {
         "*.vue": "vue",
         "*.wpy": "vue",
         "*.wxml": "html",
         "*.wxss": "css"
-    }, // File associations
-    "workbench.list.smoothScrolling": true, // Smooth scrolling for lists
-    "workbench.iconTheme": "material-icon-theme", // File icons theme
-    "terminal.integrated.smoothScrolling": true, // Smooth scrolling for terminal
-    "files.autoSave": "onFocusChange", // Auto save when focus changes
-    "files.autoSaveDelay": 200, // Auto save delay
-    "workbench.productIconTheme": "bongocat", // Color theme
-    "workbench.tree.stickyScrollMaxItemCount": 10, // Max sticky scroll items
-    "debug.onTaskErrors": "debugAnyway", // Debug anyway when task errors
-    "security.workspace.trust.untrustedFiles": "open", // Open untrusted files
-    "window.dialogStyle": "custom", // Custom dialog style
-    "workbench.editor.wrapTabs": true, // Wrap tabs
-    "workbench.tree.indent": 40, // Tree indent
-    "workbench.tree.renderIndentGuides": "always", // Always show indent guides
-    "workbench.editor.showTabs": "multiple", // Show tabs when multiple
-    "workbench.startupEditor": "none", // Disable startup editor
-    "update.showReleaseNotes": false, // Don't show release notes
-    "workbench.settings.applyToAllProfiles": [
-        "editor.fontFamily",
-        "workbench.list.horizontalScrolling"
-    ], // Settings applied to all profiles
-    "workbench.list.horizontalScrolling": true, // Horizontal scrolling for lists
-    "workbench.editorAssociations": {
-        "*.copilotmd": "vscode.markdown.preview.editor",
-        "file:/**/*.xlsx": "default",
-        "file:/**/*.csv": "default",
-        "*.xlsx": "cweijan.officeViewer",
-        "*.cdb": "sqlite-viewer.option",
-        "*.md": "cweijan.markdownViewer.optional"
-    }, // Editor associations
-
-    // =========================================================================
-    // Git Settings
-    // =========================================================================
-    "git.enableSmartCommit": true, // Commit directly without staging
-    "git.autofetch": true, // Auto fetch
-    "git.confirmSync": false, // Don't prompt for confirmation on sync
-    "git.openRepositoryInParentFolders": "never", // Don't open repository in parent folders
-    "git.ignoreWindowsGit27Warning": true, // Ignore Git 2.7 warning on Windows
-    "git.terminalAuthentication": false, // Disable terminal authentication
-    "git.replaceTagsWhenPull": true, // Replace tags when pulling
-
-    // =========================================================================
-    // Emmet Settings
-    // =========================================================================
-    "emmet.triggerExpansionOnTab": true, // Expand abbreviations with Tab
-    "emmet.showAbbreviationSuggestions": true, // Show abbreviation suggestions
-    "emmet.showExpandedAbbreviation": "always", // Always show expanded abbreviation
-    "emmet.includeLanguages": {
-        "vue-html": "html",
-        "vue": "html",
-        "wpy": "html"
-    }, // Include languages
-
-    // =========================================================================
-    // Terminal Settings
-    // =========================================================================
-    "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
-    "terminal.integrated.fontLigatures.enabled": true, // Enable font ligatures in terminal
-    "terminal.integrated.fontFamily": "", // Terminal font family
-    "terminal.integrated.inheritEnv": false, // Don't inherit environment variables
-    "terminal.integrated.defaultProfile.linux": "zsh", // Default terminal on Linux
-
-    // =========================================================================
-    // Explorer Settings
-    // =========================================================================
-    "explorer.confirmDelete": false, // Don't confirm delete
+    }, // File extension to language associations
+    "files.autoSave": "onFocusChange", // Auto save on focus change
+    "files.autoSaveDelay": 200, // Delay for auto save in ms
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -82,11 +52,15 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/*.js": {
-            "when": "$(basename).ts" // Hide JS files generated from TS
-        },
+            "when": "$(basename).ts"
+        }, // Exclude JS files if TS exists
         "**/node_modules": true
-    }, // Files to exclude
-    "explorer.compactFolders": true, // Compact folders with single child
+    }, // Exclude files/folders from explorer
+    "files.insertFinalNewline": true, // Insert newline at end of file on save
+    "files.trimFinalNewlines": true, // Trim final newlines on save
+    "files.trimTrailingWhitespace": true, // Trim trailing whitespace on save
+    "explorer.confirmDelete": false, // No confirm on delete
+    "explorer.compactFolders": true, // Collapse single-child folders
     "explorer.fileNesting.patterns": {
         "*.ts": "${capture}.js",
         "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -100,46 +74,54 @@
         "*.db3": "${capture}.${extname}-*",
         "*.sdb": "${capture}.${extname}-*",
         "*.s3db": "${capture}.${extname}-*"
-    }, // File nesting patterns
+    }, // File nesting patterns in explorer
 
     // =========================================================================
     // Editor Settings
     // =========================================================================
-    "editor.defaultFormatter": "esbenp.prettier-vscode", // Default formatter
-    "editor.fontSize": 14, // Font size
-    "editor.wordWrap": "on", // Word wrap
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true, // Independent colors for bracket types
-    "editor.fontLigatures": true, // Font ligatures
-    "editor.formatOnSave": true, // Format on save
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Default formatter extension
+    "editor.fontSize": 14, // Default font size
     "editor.fontFamily": "'Fira Code','Maple Mono','Cousine Nerd Font','Hack NF','JetBrains Mono'", // Font family
-    "editor.detectIndentation": false, // Don't auto-detect indentation
+    "editor.fontLigatures": true, // Enable font ligatures
+    "editor.wordWrap": "on", // Enable word wrap
+    "editor.detectIndentation": false, // Disable auto-indent detection
     "editor.tabSize": 4, // Tab size
     "editor.rulers": [], // No rulers
     "editor.renderControlCharacters": true, // Show control characters
     "editor.smoothScrolling": true, // Smooth scrolling
-    "editor.cursorSmoothCaretAnimation": "on", // Cursor animation
-    "editor.stickyScroll.maxLineCount": 20, // Max sticky scroll lines
-    "diffEditor.wordWrap": "on", // Diff editor word wrap
+    "editor.cursorSmoothCaretAnimation": "on", // Smooth caret animation
     "editor.cursorBlinking": "smooth", // Smooth cursor blinking
     "editor.cursorStyle": "line", // Line cursor style
-    "editor.guides.bracketPairs": "active", // Active bracket pair guides
-    "editor.mouseWheelZoom": true, // Mouse wheel zoom
+    "editor.guides.bracketPairs": "active", // Show active bracket pair guides
+    "editor.mouseWheelZoom": true, // Enable zoom via mouse wheel
     "editor.renderWhitespace": "all", // Show all whitespace
-    "diffEditor.maxComputationTime": 0, // No limit on diff computation time
-    "editor.inlayHints.fontFamily": "", // Inlay hints font family
-    "editor.minimap.renderCharacters": false, // Don't render actual characters in minimap
+    "editor.inlayHints.fontFamily": "", // Font for inlay hints (empty = default)
+    "editor.minimap.renderCharacters": false, // Do not render actual characters in minimap
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
-    }, // Code actions on save
+    }, // Enable ESLint fixes on save
+    "editor.formatOnSave": true, // Format file on save
     "editor.formatOnPaste": true, // Format on paste
     "editor.formatOnType": true, // Format on type
-    "editor.inlineSuggest.edits.allowCodeShifting": "always", // Allow code shifting
-    "editor.definitionLinkOpensInPeek": true, // Open definition links in peek view
-    "editor.foldingImportsByDefault": true, // Fold imports by default
-    "editor.inlineCompletionsAccessibilityVerbose": true, // Verbose inline completion accessibility
-    "editor.inlayHints.padding": true, // Pad inlay hints
-    "editor.stickyTabStops": true, // Sticky tab stops
-    "editor.suggest.preview": true, // Preview suggestions
+    "editor.inlineSuggest.edits.allowCodeShifting": "always", // Allow code shifting in inline suggestions
+    "editor.inlineSuggest.edits.showCollapsed": true, // Show collapsed inline suggestions
+    "editor.inlineCompletionsAccessibilityVerbose": true, // Verbose accessibility for inline completions
+    "editor.inlayHints.padding": true, // Padding for inlay hints
+    "editor.stickyTabStops": true, // Enable sticky tab stops
+    "editor.stickyScroll.maxLineCount": 20, // Max lines for sticky scroll
+    "editor.suggest.preview": true, // Preview suggestion in autocomplete
+    "editor.foldingImportsByDefault": true, // Fold import statements by default
+    "editor.tabCompletion": "on", // Enable tab completion
+
+    // =========================================================================
+    // Diff Editor Settings
+    // =========================================================================
+    "diffEditor.wordWrap": "on", // Enable word wrap in diff editor
+    "diffEditor.maxComputationTime": 0, // No limit for diff computation time
+    "diffEditor.codeLens": true, // Enable code lens in diff editor
+    "diffEditor.hideUnchangedRegions.enabled": true, // Hide unchanged regions
+    "diffEditor.experimental.showMoves": true, // Show code moves in diff
+    "diffEditor.experimental.useTrueInlineView": true, // Use true inline view for diffs
 
     // =========================================================================
     // Search Settings
@@ -161,82 +143,221 @@
         "**/.pytest_cache": true,
         "**/.mypy_cache": true,
         "**/.vscode-test": true
-    }, // Directories to exclude from search
+    }, // Exclude patterns for search
 
     // =========================================================================
-    // CMake Settings
+    // Terminal Settings
     // =========================================================================
-    "cmake.configureOnOpen": true, // Configure CMake when opening a project
-    "cmake.additionalCompilerSearchDirs": ["/usr/bin"], // Additional compiler search directories
+    "terminal.integrated.smoothScrolling": true, // Smooth scrolling in terminal
+    "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"], // Commands skipped by shell
+    "terminal.integrated.fontLigatures.enabled": true, // Enable font ligatures
+    "terminal.integrated.fontFamily": "", // Terminal font family (empty = default)
+    "terminal.integrated.inheritEnv": false, // Do not inherit environment variables
+    "terminal.integrated.defaultProfile.linux": "zsh", // Default shell for Linux
+
+    // =========================================================================
+    // Git Settings
+    // =========================================================================
+    "git.enableSmartCommit": true, // Enable commit without staging
+    "git.autofetch": true, // Auto fetch repositories
+    "git.confirmSync": false, // Do not confirm sync
+    "git.openRepositoryInParentFolders": "never", // Do not open repository in parent folders
+    "git.ignoreWindowsGit27Warning": true, // Ignore Windows Git 2.7 warning
+    "git.terminalAuthentication": false, // Disable terminal authentication
+    "git.replaceTagsWhenPull": true, // Replace tags on pull
+
+    // =========================================================================
+    // GitLens Extension Settings
+    // =========================================================================
+    "gitlens.detectNestedRepositories": true, // Detect nested repositories
+
+    // =========================================================================
+    // GitHub Copilot & Chat Settings
+    // =========================================================================
+    "github.copilot.enable": {
+        "markdown": true,
+        "plaintext": true,
+        "python": true,
+        "typescript": true,
+        "javascript": true,
+        "html": true,
+        "css": true,
+        "json": true,
+        "c": true,
+        "cpp": true,
+        "java": true,
+        "php": true,
+        "ruby": true,
+        "go": true,
+        "rust": true,
+        "shell": true,
+        "sql": true,
+        "swift": true,
+        "vue": true,
+        "yaml": true
+    }, // Enable Copilot for these languages
+    "github.copilot.chat.scopeSelection": true, // Enable scope selection in chat
+    "github.copilot.chat.editor.temporalContext.enabled": true, // Enable temporal context (editor)
+    "github.copilot.chat.edits.temporalContext.enabled": true, // Enable temporal context (edits)
+    "github.copilot.chat.generateTests.codeLens": true, // Enable generate tests CodeLens
+    "github.copilot.chat.languageContext.typescript.enabled": true, // Enable TypeScript language context
+    "github.copilot.nextEditSuggestions.enabled": true, // Enable next edit suggestions
+    "github.copilot.chat.codesearch.enabled": true, // Enable code search in chat
+    "github.copilot.nextEditSuggestions.fixes": true, // Enable next edit suggestion fixes
+    "github.copilot.chat.languageContext.inline.typescript.enabled": true, // Enable inline TS context
+    "github.copilot.chat.search.keywordSuggestions": true, // Enable keyword suggestions in chat
+    "github.copilot.chat.agent.thinkingTool": true, // Enable thinking tool in chat
+    "github.copilot.chat.languageContext.fix.typescript.enabled": true, // Enable TS context fixes
+
+    // =========================================================================
+    // GitHub Pull Requests Extension Settings
+    // =========================================================================
+    "githubPullRequests.experimental.chat": true, // Enable chat in PR extension
+    "githubPullRequests.experimental.notificationsView": true, // Enable notifications view
+    "githubPullRequests.experimental.useQuickChat": true, // Enable quick chat
+    "githubPullRequests.pullRequestDescription": "Copilot", // Default PR description
+    "githubPullRequests.createOnPublishBranch": "never", // Never create PR on publish branch
+
+    // =========================================================================
+    // Remote Development
+    // =========================================================================
+    "remote.SSH.remotePlatform": {
+        "LinuxServer": "linux",
+        "154.44.26.17": "linux"
+    }, // Specify remote platforms for SSH
+    "remote.extensionKind": {
+        "GitHub.copilot": ["ui"],
+        "GitHub.copilot-chat": ["ui"]
+    }, // Specify extension kind for remote
+    "remote.autoForwardPorts": false, // Disable auto-forwarding ports
+
+    // =========================================================================
+    // Editor Associations
+    // =========================================================================
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "file:/**/*.xlsx": "default",
+        "file:/**/*.csv": "default",
+        "*.xlsx": "cweijan.officeViewer",
+        "*.cdb": "sqlite-viewer.option",
+        "*.md": "cweijan.markdownViewer.optional"
+    }, // Editor associations for file types
+
+    // =========================================================================
+    // Emmet Settings
+    // =========================================================================
+    "emmet.triggerExpansionOnTab": true, // Expand Emmet abbreviation with Tab
+    "emmet.showAbbreviationSuggestions": true, // Show abbreviation suggestions
+    "emmet.showExpandedAbbreviation": "always", // Always show expanded abbreviation
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "wpy": "html"
+    }, // Language mappings for Emmet
+
+    // =========================================================================
+    // Language Specific Settings
+    // =========================================================================
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "[tex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.tabSize": 4
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.formatOnSave": true,
+        "editor.suggestSelection": "recentlyUsedByPrefix"
+    },
+    "[typst]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+
+    // =========================================================================
+    // CMake Extension Settings
+    // =========================================================================
+    "cmake.configureOnOpen": true, // Configure CMake on open
+    "cmake.additionalCompilerSearchDirs": ["/usr/bin"], // Additional compiler search dirs
     "cmake.generator": "Ninja", // CMake generator
     "cmake.buildDirectory": "${workspaceFolder}/build", // Build directory
-    "cmake.showNotAllDocumentsSavedQuestion": false, // Don't ask about unsaved documents
+    "cmake.showNotAllDocumentsSavedQuestion": false, // Do not prompt on unsaved docs
 
     // =========================================================================
-    // CodeSnap Settings
+    // CodeSnap Extension Settings
     // =========================================================================
-    "codesnap.backgroundColor": "#f2f2f2", // Background color
-    "codesnap.boxShadow": "5px 5px 60px 0px #888888", // Box shadow
+    "codesnap.backgroundColor": "#f2f2f2", // Background color for screenshots
+    "codesnap.boxShadow": "5px 5px 60px 0px #888888", // Box shadow for screenshots
     "codesnap.containerPadding": "3em", // Container padding
     "codesnap.roundedCorners": true, // Rounded corners
     "codesnap.showWindowTitle": true, // Show window title
     "codesnap.showLineNumbers": true, // Show line numbers
     "codesnap.realLineNumbers": true, // Use real line numbers
-    "codesnap.transparentBackground": false, // Opaque background
-    "codesnap.target": "container", // Target container
+    "codesnap.transparentBackground": false, // No transparent background
+    "codesnap.target": "container", // Screenshot target
 
     // =========================================================================
-    // C/C++ Settings
+    // C/C++ Extension Settings
     // =========================================================================
-    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true, // Show auto declaration types on left
-    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true, // Space after cast close parenthesis
-    "C_Cpp.vcFormat.space.beforeComma": true, // Space before comma
-    "C_Cpp.vcFormat.space.beforeEmptySquareBrackets": true, // Space before empty square brackets
-    "C_Cpp.vcFormat.space.beforeFunctionOpenParenthesis": "insert", // Insert space before function parenthesis
-    "C_Cpp.vcFormat.space.beforeInitializerListOpenBrace": true, // Space before initializer list brace
-    "C_Cpp.vcFormat.space.beforeLambdaOpenParenthesis": true, // Space before lambda parenthesis
-    "C_Cpp.vcFormat.space.beforeOpenSquareBracket": true, // Space before open square bracket
-    "C_Cpp.vcFormat.space.betweenEmptyBraces": true, // Space between empty braces
-    "C_Cpp.vcFormat.space.betweenEmptyLambdaBrackets": true, // Space between empty lambda brackets
-    "C_Cpp.vcFormat.space.betweenEmptyParameterListParentheses": true, // Space between empty parameter list parentheses
-    "C_Cpp.vcFormat.space.betweenEmptySquareBrackets": true, // Space between empty square brackets
-    "C_Cpp.vcFormat.space.insertAfterSemicolon": true, // Insert space after semicolon
-    "C_Cpp.vcFormat.space.withinCastParentheses": true, // Space within cast parentheses
-    "C_Cpp.vcFormat.space.withinControlFlowStatementParentheses": true, // Space within control flow statement parentheses
-    "C_Cpp.vcFormat.space.withinExpressionParentheses": true, // Space within expression parentheses
-    "C_Cpp.vcFormat.space.withinLambdaBrackets": true, // Space within lambda brackets
-    "C_Cpp.vcFormat.space.withinParameterListParentheses": true, // Space within parameter list parentheses
-    "C_Cpp.vcFormat.space.withinSquareBrackets": true, // Space within square brackets
     "C_Cpp.intelliSenseEngine": "default", // IntelliSense engine
     "C_Cpp.formatting": "clangFormat", // Formatting tool
-    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools", // Default configuration provider
-    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true, // Enable auto declaration types
-    "C_Cpp.inlayHints.parameterNames.enabled": true, // Enable parameter names
-    "C_Cpp.inlayHints.referenceOperator.enabled": true, // Enable reference operator
-    "C_Cpp.inlayHints.referenceOperator.showSpace": true, // Show space after reference operator
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine", // New line before block open brace
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine", // New line before function open brace
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine", // Same line for lambda open brace
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "newLine", // New line before namespace open brace
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine", // Same line for type open brace
-    "C_Cpp.vcFormat.newLine.beforeWhileInDoWhile": true, // New line before while in do-while
-    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true, // Same line for empty function close brace
-    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true, // Same line for empty type close brace
-    "C_Cpp.copilotHover": "enabled", // Enable Copilot hover
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools", // Config provider
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true, // Inlay for auto types
+    "C_Cpp.inlayHints.parameterNames.enabled": true, // Inlay for parameter names
+    "C_Cpp.inlayHints.referenceOperator.enabled": true, // Inlay for reference operator
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true, // Space after &
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true, // Show auto types on left
+    "C_Cpp.copilotHover": "enabled", // Enable Copilot hover in C/C++
+    // --- C/C++ Formatting Style ---
+    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true,
+    "C_Cpp.vcFormat.space.beforeComma": true,
+    "C_Cpp.vcFormat.space.beforeEmptySquareBrackets": true,
+    "C_Cpp.vcFormat.space.beforeFunctionOpenParenthesis": "insert",
+    "C_Cpp.vcFormat.space.beforeInitializerListOpenBrace": true,
+    "C_Cpp.vcFormat.space.beforeLambdaOpenParenthesis": true,
+    "C_Cpp.vcFormat.space.beforeOpenSquareBracket": true,
+    "C_Cpp.vcFormat.space.betweenEmptyBraces": true,
+    "C_Cpp.vcFormat.space.betweenEmptyLambdaBrackets": true,
+    "C_Cpp.vcFormat.space.betweenEmptyParameterListParentheses": true,
+    "C_Cpp.vcFormat.space.betweenEmptySquareBrackets": true,
+    "C_Cpp.vcFormat.space.insertAfterSemicolon": true,
+    "C_Cpp.vcFormat.space.withinCastParentheses": true,
+    "C_Cpp.vcFormat.space.withinControlFlowStatementParentheses": true,
+    "C_Cpp.vcFormat.space.withinExpressionParentheses": true,
+    "C_Cpp.vcFormat.space.withinLambdaBrackets": true,
+    "C_Cpp.vcFormat.space.withinParameterListParentheses": true,
+    "C_Cpp.vcFormat.space.withinSquareBrackets": true,
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "newLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
+    "C_Cpp.vcFormat.newLine.beforeWhileInDoWhile": true,
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true,
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true,
 
     // =========================================================================
-    // CSS Settings
+    // CSS Formatting
     // =========================================================================
     "css.format.spaceAroundSelectorSeparator": true, // Space around selector separator
 
     // =========================================================================
-    // LaTeX Settings
+    // LaTeX Workshop Extension Settings
     // =========================================================================
-    "latex-workshop.latex.autoBuild.run": "never", // Don't auto-build LaTeX documents
-    "latex-workshop.showContextMenu": true, // Show context menu
+    "latex-workshop.latex.autoBuild.run": "never", // Disable auto build
+    "latex-workshop.showContextMenu": true, // Show context menu in LaTeX
     "latex-workshop.intellisense.package.enabled": true, // Enable package intellisense
-    "latex-workshop.message.error.show": false, // Don't show error messages
-    "latex-workshop.message.warning.show": false, // Don't show warning messages
+    "latex-workshop.message.error.show": false, // Hide error messages
+    "latex-workshop.message.warning.show": false, // Hide warning messages
     "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
@@ -280,7 +401,7 @@
             "command": "biber",
             "args": ["%DOCFILE%"]
         }
-    ], // LaTeX compilation tools
+    ], // Tools for LaTeX compilation
     "latex-workshop.latex.recipes": [
         {
             "name": "XeLaTeX",
@@ -314,7 +435,7 @@
             "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2",
             "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
         }
-    ], // LaTeX compilation recipes
+    ], // Compilation recipes for LaTeX
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux",
         "*.bbl",
@@ -334,22 +455,23 @@
         "*.ist",
         "*.fls",
         "*.log",
-        "*.fdb_latexmk"
-    ], // Files to clean
-    "latex-workshop.latex.autoClean.run": "onFailed", // Clean auxiliary files on failed builds
+        "*.fdb_latexmk",
+        "*.synctex.gz"
+    ], // Auxiliary files to clean
+    "latex-workshop.latex.autoClean.run": "onFailed", // Auto clean on build failure
     "latex-workshop.latex.recipe.default": "lastUsed", // Use last used recipe
-    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // Double-click for SyncTeX
-    "latex-workshop.view.pdf.ref.viewer": "auto", // Auto reference viewer
-    "latex-workshop.latex.outDir": "%DIR%", // Output directory
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // PDF synctex keybinding
+    "latex-workshop.view.pdf.ref.viewer": "auto", // Default PDF reference viewer
+    "latex-workshop.latex.outDir": "%DIR%", // Output directory for LaTeX build
     "latex-workshop.view.pdf.viewer": "external", // External PDF viewer
-    "latex-workshop.view.pdf.external.viewer.command": "okular", // External viewer command
+    "latex-workshop.view.pdf.external.viewer.command": "okular", // External PDF viewer command
     "latex-workshop.view.pdf.external.viewer.args": ["--unique", "%PDF%"],
     "latex-workshop.view.pdf.external.synctex.command": "okular", // External SyncTeX command
     "latex-workshop.view.pdf.external.synctex.args": [
         "--unique",
         "%PDF%#src:%LINE%%TEX%"
-    ], // External SyncTeX arguments
-    "latex-workshop.formatting.latex": "latexindent", // Formatting tool
+    ], // Arguments for external SyncTeX
+    "latex-workshop.formatting.latex": "latexindent", // Formatter for LaTeX
     "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/x86_64-linux/latexindent", // Path to latexindent
     "latex-workshop.formatting.latexindent.args": [
         "-c",
@@ -360,226 +482,74 @@
         "%WORKSPACE_FOLDER%/.latexindent.yaml",
         "-m",
         "-g=/dev/null"
-    ], // Enable tab completion
-    "github.copilot.enable": {
-        "markdown": true,
-        "plaintext": true,
-        "python": true,
-        "typescript": true,
-        "javascript": true,
-        "html": true,
-        "css": true,
-        "json": true,
-        "c": true,
-        "cpp": true,
-        "java": true,
-        "php": true,
-        "ruby": true,
-        "go": true,
-        "rust": true,
-        "shell": true,
-        "sql": true,
-        "swift": true,
-        "vue": true,
-        "yaml": true
-    }, // Enable Copilot for these languages
-    "github.copilot.chat.scopeSelection": true, // Enable scope selection
-    "github.copilot.chat.editor.temporalContext.enabled": true, // Enable temporal context for chat
-    "github.copilot.chat.edits.temporalContext.enabled": true, // Enable temporal context for edits
-    "github.copilot.chat.generateTests.codeLens": true, // Enable test generation codeLens
-    "github.copilot.chat.languageContext.typescript.enabled": true, // Enable TypeScript language context
-    "github.copilot.nextEditSuggestions.enabled": true, // Enable next edit suggestions
-    "chat.agent.enabled": true, // Enable chat agent
-    "github.copilot.chat.codesearch.enabled": true, // Enable code search
-    "github.copilot.nextEditSuggestions.fixes": true, // Enable next edit suggestion fixes
-    "github.copilot.chat.languageContext.inline.typescript.enabled": true, // Enable inline TypeScript language context
-    "github.copilot.chat.search.keywordSuggestions": true, // Enable keyword suggestions
-    "github.copilot.chat.agent.thinkingTool": true, // Enable thinking tool
-    "github.copilot.chat.languageContext.fix.typescript.enabled": true, // Enable TypeScript language context fixes
+    ], // Arguments for latexindent
 
     // =========================================================================
-    // GitHub Pull Request Settings
-    // =========================================================================
-    "githubPullRequests.experimental.chat": true, // Enable chat
-    "githubPullRequests.experimental.notificationsView": true, // Enable notifications view
-    "githubPullRequests.experimental.useQuickChat": true, // Enable quick chat
-    "githubPullRequests.pullRequestDescription": "Copilot", // Pull request description
-    "githubPullRequests.createOnPublishBranch": "never", // Never create PR on publish branch
-    "chat.editing.confirmEditRequestRetry": false, // Don't confirm edit request retry
-
-    // =========================================================================
-    // Remote Development Settings
-    // =========================================================================
-    "remote.SSH.remotePlatform": {
-        "LinuxServer": "linux",
-        "154.44.26.17": "linux"
-    }, // Remote SSH platform
-    "remote.extensionKind": {
-        "GitHub.copilot": ["ui"],
-        "GitHub.copilot-chat": ["ui"]
-    }, // Extension kind
-    "remote.autoForwardPorts": false, // Don't auto-forward ports
-
-    // =========================================================================
-    // Language Specific Settings
-    // =========================================================================
-    "[c]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools" // Use C/C++ formatter for C
-    },
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools" // Use C/C++ formatter for C++
-    },
-    "[python]": {},
-    "[html]": {},
-    "[vue]": {},
-    "[javascript]": {},
-    "[typescript]": {},
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java" // Use redhat.java formatter for Java
-    },
-    "[tex]": {
-        "editor.defaultFormatter": "James-Yu.latex-workshop",
-        "editor.tabSize": 4
-    },
-    "[json]": {},
-    "[jsonc]": {},
-    "[scss]": {},
-    "[latex]": {
-        "editor.defaultFormatter": "James-Yu.latex-workshop",
-        "editor.formatOnSave": true,
-        "editor.suggestSelection": "recentlyUsedByPrefix"
-    },
-    "[typst]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" // Word separators for Typst
-    },
-    "[typst-code]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" // Word separators for Typst Code
-    },
-
-    // =========================================================================
-    // Settings Sync
-    // =========================================================================
-    "settingsSync.ignoredSettings": ["-C_Cpp.clang_format_path"], // Ignored settings in sync
-    "redhat.telemetry.enabled": true, // Enable RedHat telemetry
-
-    // =========================================================================
-    // JavaScript Settings
+    // JavaScript & Node.js Settings
     // =========================================================================
     "debug.javascript.defaultRuntimeExecutable": {
         "pwa-node": "node"
-    }, // Default runtime for JavaScript
+    }, // Default Node.js runtime for debugging
 
     // =========================================================================
-    // Python Settings
+    // Python Extension Settings
     // =========================================================================
     "python.analysis.aiCodeActions": {
         "implementAbstractClasses": true
-    }, // AI code actions
-    "python.analysis.autoFormatStrings": true, // Auto format strings
+    }, // AI suggestions for abstract classes
+    "python.analysis.autoFormatStrings": true, // Format strings automatically
     "python.analysis.inlayHints.callArgumentNames": "all", // Show all argument names
     "python.analysis.inlayHints.functionReturnTypes": true, // Show function return types
-    "python.analysis.inlayHints.pytestParameters": true, // Show pytest parameters
+    "python.analysis.inlayHints.pytestParameters": true, // Show pytest parameter hints
     "python.analysis.inlayHints.variableTypes": true, // Show variable types
     "debugpy.debugJustMyCode": true, // Debug only user code
     "python.analysis.typeCheckingMode": "standard", // Standard type checking
+    "python.analysis.autoImportCompletions": true, // Auto-import completions
+    "python.analysis.completeFunctionParens": true, // Complete function parens
 
     // =========================================================================
-    // Typst Settings
+    // Prettier Extension Settings
+    // =========================================================================
+    "prettier.tabWidth": 4, // Tab width for Prettier
+    "prettier.useTabs": false, // Use spaces instead of tabs
+    "prettier.proseWrap": "preserve", // Preserve prose wrap
+    "prettier.bracketSameLine": true, // Brackets on same line
+    "prettier.singleAttributePerLine": true, // One attribute per line
+
+    // =========================================================================
+    // CPH (Competitive Programming Helper) Extension
+    // =========================================================================
+    "cph.general.defaultLanguage": "cpp", // Default CPH language
+    "cph.general.firstTime": false, // Mark CPH as initialized
+    "cph.language.cpp.Args": "-std=c++17 -O2", // C++ compile args
+
+    // =========================================================================
+    // Java Extension Settings
+    // =========================================================================
+    "java.debug.settings.showStaticVariables": true, // Show static vars in Java debug
+    "java.debug.settings.showQualifiedNames": true, // Show qualified names
+    "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml", // Java formatter config
+
+    // =========================================================================
+    // Typst & Tinymist Extension Settings
     // =========================================================================
     "tinymist.formatterMode": "typstyle", // Formatter mode for Typst
+    "tinymist.formatterIndentSize": 4, // Indent size for Typst
 
     // =========================================================================
-    // VSCode Icons Settings
+    // Miscellaneous
     // =========================================================================
-    "vsicons.dontShowNewVersionMessage": true, // Don't show new version message
-
-    // =========================================================================
-    // Background Cover Settings
-    // =========================================================================
-    "backgroundCover.imagePath": "", // Background image path
+    "backgroundCover.imagePath": "", // Custom background image path
     "backgroundCover.randomImageFolder": "f:\\pictures\\wallpaper", // Random image folder
-
-    // =========================================================================
-    // MASM/TASM Settings
-    // =========================================================================
-    "masmtasm.ASM.emulator": "dosbox", // ASM emulator
+    "masmtasm.ASM.emulator": "dosbox", // DOS emulator for ASM
     "masmtasm.ASM.assembler": "TASM", // ASM assembler
-
-    // =========================================================================
-    // GitLens Settings
-    // =========================================================================
-    "gitlens.detectNestedRepositories": true, // Detect nested repositories
-
-    // =========================================================================
-    // VSCode Office Settings
-    // =========================================================================
-    "vscode-office.openOutline": false, // Don't open outline
-    "vscode-office.editorTheme": "Auto", // Auto editor theme
-
-    // =========================================================================
-    // Prettier Settings
-    // =========================================================================
-    "prettier.tabWidth": 4, // Tab width
-    "prettier.useTabs": false, // Don't use tabs
-    "prettier.proseWrap": "preserve", // Preserve prose wrap
-    "prettier.bracketSameLine": true, // Bracket same line
-    "prettier.singleAttributePerLine": true, // Single attribute per line
-
-    // =========================================================================
-    // CPH Settings
-    // =========================================================================
-    "cph.general.defaultLanguage": "cpp", // Default language
-    "cph.general.firstTime": false, // Not first time
-    "cph.language.cpp.Args": "-std=c++17 -O2", // C++ arguments
-
-    // =========================================================================
-    // Java Settings
-    // =========================================================================
-    "java.debug.settings.showStaticVariables": true, // Show static variables
-    "java.debug.settings.showQualifiedNames": true, // Show qualified names
-    "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml", // Formatter URL
-
-    // =========================================================================
-    // MCP Settings
-    // =========================================================================
-    "chat.mcp.enabled": true, // Enable MCP
-    "diffEditor.codeLens": true, // Enable diff editor code lens
-    "diffEditor.hideUnchangedRegions.enabled": true, // Hide unchanged regions
-    "diffEditor.experimental.showMoves": true, // Show moves in diff
-    "diffEditor.experimental.useTrueInlineView": true, // Use true inline view
-    "files.insertFinalNewline": true, // Insert final newline
-    "files.trimFinalNewlines": true, // Trim final newlines
-    "files.trimTrailingWhitespace": true, // Trim trailing whitespace
-    "workbench.commandPalette.preserveInput": true, // Preserve command palette input
-    "workbench.experimental.cloudChanges.partialMatches.enabled": true, // Enable partial matches for cloud changes
-    "workbench.editor.preferHistoryBasedLanguageDetection": true, // Prefer history-based language detection
-    "workbench.editor.sharedViewState": true, // Share view state
-    "workbench.settings.showAISearchToggle": true, // Show AI search toggle
-    "window.restoreFullscreen": true, // Restore fullscreen
-
-    // =========================================================================
-    // C# Settings
-    // =========================================================================
-    "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true, // Enable inlay hints for implicit variable types
-    "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true, // Enable inlay hints for implicit object creation
-    "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true, // Enable inlay hints for lambda parameter types
-    "csharp.inlayHints.enableInlayHintsForTypes": true, // Enable inlay hints for types
-    "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true, // Enable inlay hints for indexer parameters
-    "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true, // Enable inlay hints for literal parameters
-    "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true, // Enable inlay hints for object creation parameters
-    "dotnet.inlayHints.enableInlayHintsForOtherParameters": true, // Enable inlay hints for other parameters
-    "dotnet.inlayHints.enableInlayHintsForParameters": true, // Enable inlay hints for parameters
-    "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix": true, // Suppress inlay hints for parameters that differ only by suffix
-    "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName": true, // Suppress inlay hints for parameters that match argument name
-    "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent": true,
-    "tinymist.formatterIndentSize": 4,
-    "editor.hover.enabled": false,
-    "editor.inlineSuggest.edits.showCollapsed": true,
-    "editor.tabCompletion": "on",
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.completeFunctionParens": true,
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.scrollToSwitchTabs": true,
-    "workbench.editor.pinnedTabsOnSeparateRow": true,
-    "workbench.colorTheme": "Winter is Coming (Dark Blue)" // Suppress inlay hints for parameters that match method intent
+    "vsicons.dontShowNewVersionMessage": true, // Hide VSCode icons new version msg
+    "vscode-office.openOutline": false, // Disable outline in Office extension
+    "vscode-office.editorTheme": "Auto", // Auto theme for Office extension
+    "chat.agent.enabled": true, // Enable chat agent
+    "chat.editing.confirmEditRequestRetry": false, // No confirm on edit retry
+    "chat.mcp.enabled": true, // Enable MCP (multi-chat processing?)
+    "settingsSync.ignoredSettings": ["-C_Cpp.clang_format_path"], // Ignore clang_format_path in sync
+    "redhat.telemetry.enabled": true, // Enable RedHat telemetry
+    "editor.hover.enabled": false // Disable editor hover
 }
