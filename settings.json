@@ -1,110 +1,109 @@
 {
     // =========================================================================
-    // 1. General UI & Window
-    // Controls the overall appearance and behavior of the VSCode window.
+    // Window / General
+    // Basic UI and window behavior
     // =========================================================================
-    "window.newWindowProfile": "默认", // Profile to use for new windows.
-    "window.dialogStyle": "custom", // Use custom dialog style for windows.
-    "window.restoreFullscreen": true, // Restore fullscreen state on application launch.
-    "security.workspace.trust.untrustedFiles": "open", // Open untrusted files without asking for workspace trust.
+    "window.newWindowProfile": "默认", // New window profile to use.
+    "window.dialogStyle": "custom", // Use custom dialog style.
+    "window.restoreFullscreen": true, // Restore fullscreen on launch.
+    "security.workspace.trust.untrustedFiles": "open", // Open untrusted files without trust prompt.
 
     // =========================================================================
-    // 2. Workbench Appearance
-    // Customizes the look and feel of the workbench, including colors, icons, and layout.
+    // Workbench Appearance
+    // Theme, icons, lists, tabs and UI behavior
     // =========================================================================
-    "workbench.colorTheme": "Winter is Coming (Dark Blue)", // Sets the color theme for the UI.
-    "workbench.iconTheme": "material-icon-theme", // Sets the file icon theme in the explorer.
-    "workbench.productIconTheme": "bongocat", // Sets the theme for icons throughout the UI (e.g., activity bar).
-    "workbench.list.smoothScrolling": true, // Enables smooth scrolling in lists and trees.
-    "workbench.list.horizontalScrolling": true, // Enables horizontal scrolling in lists and trees.
-    "workbench.tree.indent": 40, // Sets the indentation for tree widgets like the file explorer.
-    "workbench.tree.renderIndentGuides": "always", // Always shows indentation guides in tree views.
-    "workbench.tree.stickyScrollMaxItemCount": 10, // Sets the maximum number of sticky scroll items in tree views.
-    "workbench.editor.showTabs": "multiple", // Only shows the tab bar when multiple editors are open.
-    "workbench.editor.wrapTabs": true, // Wraps editor tabs instead of showing a scrollbar.
-    "workbench.editor.highlightModifiedTabs": true, // Highlights tabs of files with unsaved changes.
-    "workbench.editor.scrollToSwitchTabs": true, // Scrolls the tab list to make the active tab visible.
-    "workbench.editor.pinnedTabsOnSeparateRow": true, // Displays pinned tabs in a separate row above other tabs.
-    "workbench.startupEditor": "none", // Prevents opening a "Welcome" or startup editor on launch.
-    "workbench.commandPalette.preserveInput": true, // Keeps the previous input in the Command Palette.
-    "workbench.settings.showAISearchToggle": true, // Shows the AI search toggle button in the settings UI.
-    "workbench.settings.applyToAllProfiles": [
-        // Settings that will apply across all user profiles.
-        "editor.fontFamily",
-        "workbench.list.horizontalScrolling"
-    ],
+    "workbench.colorTheme": "Winter is Coming (Dark Blue)", // UI color theme.
+    "workbench.iconTheme": "material-icon-theme", // File icon theme.
+    "workbench.productIconTheme": "bongocat", // Product-wide icon theme.
+    "workbench.preferredHighContrastColorTheme": "Winter is Coming (Dark Blue - No Italics)", // Preferred high contrast theme.
+    "workbench.list.smoothScrolling": true, // Smooth scrolling for lists.
+    "workbench.list.horizontalScrolling": true, // Allow horizontal scrolling in lists.
+    "workbench.tree.indent": 40, // Indent size for tree views.
+    "workbench.tree.renderIndentGuides": "always", // Always show indent guides in trees.
+    "workbench.tree.stickyScrollMaxItemCount": 10, // Max items for sticky scroll in trees.
+    "workbench.editor.showTabs": "multiple", // Show tab bar only if multiple editors open.
+    "workbench.editor.wrapTabs": true, // Wrap tabs instead of horizontal scrolling.
+    "workbench.editor.highlightModifiedTabs": true, // Highlight modified tabs.
+    "workbench.editor.scrollToSwitchTabs": true, // Scroll tab list to active tab.
+    "workbench.editor.pinnedTabsOnSeparateRow": true, // Show pinned tabs on a separate row.
+    "workbench.startupEditor": "none", // Do not open welcome/startup editor.
+    "workbench.commandPalette.preserveInput": true, // Preserve previous Command Palette input.
+    "workbench.settings.showAISearchToggle": true, // Show AI search toggle in settings.
+    "workbench.settings.applyToAllProfiles": ["editor.fontFamily", "workbench.list.horizontalScrolling"], // Settings to apply across profiles.
 
     // =========================================================================
-    // 3. Editor: Core Functionality
-    // Core settings for text editor behavior, navigation, and interaction.
+    // Editor: Core
+    // Editing behavior, navigation and basic features
     // =========================================================================
-    "editor.wordWrap": "on", // Enables automatic line wrapping.
-    "editor.mouseWheelZoom": true, // Allows changing font size with Ctrl + Mouse Wheel.
-    "editor.foldingImportsByDefault": true, // Automatically folds import statements when a file is opened.
-    "editor.definitionLinkOpensInPeek": true, // Opens 'Go to Definition' results in a peek view.
-    "editor.stickyScroll.maxLineCount": 20, // Sets the maximum number of lines for the sticky scroll feature.
-    "editor.stickyTabStops": true, // Makes tab stops sticky, aiding in consistent indentation.
+    "editor.wordWrap": "on", // Enable word-wrap.
+    "editor.mouseWheelZoom": true, // Ctrl+mouse wheel changes font size.
+    "editor.foldingImportsByDefault": true, // Fold import blocks on open.
+    "editor.definitionLinkOpensInPeek": true, // Open definitions in peek by default.
+    "editor.stickyScroll.maxLineCount": 20, // Max lines for sticky scroll.
+    "editor.stickyTabStops": true, // Keep tab stops sticky.
 
     // =========================================================================
-    // 4. Editor: Font & Visual Appearance
-    // Settings for fonts, cursor style, whitespace rendering, and other visual elements.
+    // Editor: Font & Visual
+    // Typeface, cursor, whitespace and minimap visual settings
     // =========================================================================
-    "editor.fontSize": 14, // Sets the editor font size in pixels.
-    "editor.fontFamily": "'Fira Code','Maple Mono','Cousine Nerd Font','JetBrains Mono'", // Specifies the font family, with fallbacks.
-    "editor.fontLigatures": true, // Enables font ligatures (e.g., '!=' becomes '≠').
-    "editor.smoothScrolling": true, // Enables a smooth scrolling animation.
-    "editor.cursorStyle": "line", // Sets the cursor style.
-    "editor.cursorBlinking": "smooth", // Sets the cursor blinking animation style.
-    "editor.cursorSmoothCaretAnimation": "on", // Enables smooth animation for caret movement.
-    "editor.renderWhitespace": "all", // Renders all whitespace characters (spaces, tabs).
-    "editor.renderControlCharacters": true, // Renders control characters.
-    "editor.guides.bracketPairs": "active", // Highlights the active bracket pair guides.
-    "editor.minimap.renderCharacters": false, // Shows blocks of color in the minimap instead of actual characters.
-    "editor.rulers": [], // Disables vertical rulers in the editor.
+    "editor.fontSize": 14, // Editor font size in px.
+    "editor.fontFamily": "'Fira Code','Maple Mono','Cousine Nerd Font','JetBrains Mono'", // Editor font family.
+    "editor.fontLigatures": true, // Enable font ligatures.
+    "editor.smoothScrolling": true, // Smooth scrolling in editor.
+    "editor.cursorStyle": "line", // Cursor style.
+    "editor.cursorBlinking": "smooth", // Cursor blinking animation.
+    "editor.cursorSmoothCaretAnimation": "on", // Smooth caret animation.
+    "editor.renderWhitespace": "all", // Render all whitespace characters.
+    "editor.renderControlCharacters": true, // Render control characters.
+    "editor.guides.bracketPairs": "active", // Highlight active bracket pair guides.
+    "editor.minimap.renderCharacters": false, // Render blocks in minimap instead of chars.
+    "editor.rulers": [], // No vertical rulers.
 
     // =========================================================================
-    // 5. Editor: Formatting & Saving
-    // Controls automatic formatting, saving behavior, and whitespace management.
+    // Files: Saving & Formatting
+    // Autosave, trimming and indentation
     // =========================================================================
-    "files.autoSaveDelay": 200, // The delay in milliseconds before an auto-save is triggered.
-    "files.trimTrailingWhitespace": true, // Removes trailing whitespace on save.
-    "files.insertFinalNewline": true, // Inserts a newline at the end of the file on save.
-    "files.trimFinalNewlines": true, // Removes extra newlines at the end of the file on save.
-    "editor.tabSize": 4, // Sets the number of spaces for a tab character.
-    "editor.detectIndentation": false, // Disables automatic detection of tab size and spaces.
+    "files.autoSave": "onFocusChange", // Autosave when editor loses focus.
+    "files.autoSaveDelay": 200, // Delay (ms) used by some autosave modes.
+    "files.trimTrailingWhitespace": true, // Trim trailing whitespace on save.
+    "files.insertFinalNewline": true, // Ensure final newline on save.
+    "files.trimFinalNewlines": true, // Trim extra final newlines on save.
+    "editor.tabSize": 4, // Number of spaces per tab.
+    "editor.detectIndentation": false, // Disable auto-detect indentation.
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Default formatter (normal mode).
+    "editor.formatOnSave": true, // Format on save.
+    "editor.formatOnPaste": true, // Format pasted content.
+    "editor.formatOnType": true, // Format while typing.
 
     // =========================================================================
-    // 6. File Explorer & Management
-    // Settings for the file explorer, file associations, and file nesting.
+    // Explorer & Files
+    // File explorer behavior, associations, exclusions and nesting
     // =========================================================================
-    "explorer.confirmDelete": false, // Disables the confirmation dialog when deleting files.
-    "explorer.compactFolders": true, // Collapses single-child folders into a single tree entry.
+    "explorer.confirmDelete": false, // Disable delete confirmation in explorer.
+    "explorer.compactFolders": true, // Compact single-child folders.
     "files.associations": {
-        // Maps file patterns to specific language modes.
-        "*.vue": "vue",
-        "*.wpy": "vue",
-        "*.wxml": "html",
-        "*.wxss": "css"
+        "*.vue": "vue", // Treat .vue files as Vue.
+        "*.wpy": "vue", // Treat .wpy as Vue.
+        "*.wxml": "html", // Treat .wxml as HTML.
+        "*.wxss": "css" // Treat .wxss as CSS.
     },
     "files.exclude": {
-        // Hides files and folders from the explorer and search.
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/*.js": { "when": "$(basename).ts" },
-        "**/node_modules": true
+        "**/.git": true, // Hide .git from explorer/search.
+        "**/.svn": true, // Hide .svn.
+        "**/.hg": true, // Hide .hg.
+        "**/CVS": true, // Hide CVS folders.
+        "**/.DS_Store": true, // Hide macOS DS_Store files.
+        "**/*.js": { "when": "$(basename).ts" }, // Hide JS when corresponding TS exists.
+        "**/node_modules": true // Hide node_modules.
     },
     "explorer.fileNesting.patterns": {
-        // Defines how related files are nested under a parent file.
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
-        "*.sqlite": "${capture}.${extname}-*",
+        "*.ts": "${capture}.js", // Nest generated .js under .ts
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts", // Nest maps/min/d.ts
+        "*.jsx": "${capture}.js", // Nest .js under .jsx
+        "*.tsx": "${capture}.ts", // Nest .ts under .tsx
+        "tsconfig.json": "tsconfig.*.json", // Nest tsconfig variants
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock", // Package lock files
+        "*.sqlite": "${capture}.${extname}-*", // SQLite related files
         "*.db": "${capture}.${extname}-*",
         "*.sqlite3": "${capture}.${extname}-*",
         "*.db3": "${capture}.${extname}-*",
@@ -112,286 +111,232 @@
         "*.s3db": "${capture}.${extname}-*"
     },
     "workbench.editorAssociations": {
-        // Associates file types with specific editors.
-        "*.copilotmd": "vscode.markdown.preview.editor",
-        "file:/**/*.xlsx": "default",
-        "file:/**/*.csv": "default",
-        "*.xlsx": "cweijan.officeViewer",
-        "*.cdb": "sqlite-viewer.option",
-        "*.md": "cweijan.markdownViewer.optional"
+        "*.copilotmd": "vscode.markdown.preview.editor", // Use markdown preview for copilotmd
+        "file:/**/*.xlsx": "default", // Use default editor for .xlsx by file URI
+        "file:/**/*.csv": "default", // Use default for .csv by file URI
+        "*.xlsx": "cweijan.officeViewer", // Use office viewer for .xlsx
+        "*.cdb": "sqlite-viewer.option", // Use sqlite viewer for .cdb
+        "*.md": "cweijan.markdownViewer.optional" // Use custom markdown viewer for .md
     },
 
     // =========================================================================
-    // 7. Search Configuration
-    // Defines patterns to exclude from search results across the workspace.
+    // Search
+    // Global patterns to exclude from search
     // =========================================================================
     "search.exclude": {
-        // Excludes files and folders from search results.
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/target": true,
-        "**/logs": true,
-        "**/dist": true,
-        "**/build": true,
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/.vscode": true,
-        "**/.history": true,
-        "**__pytcache__": true,
-        "**/.pytest_cache": true,
-        "**/.mypy_cache": true,
-        "**/.vscode-test": true
+        "**/node_modules": true, // Exclude node_modules from search
+        "**/bower_components": true, // Exclude bower components
+        "**/target": true, // Exclude build target dirs
+        "**/logs": true, // Exclude logs
+        "**/dist": true, // Exclude dist
+        "**/build": true, // Exclude build
+        "**/.git": true, // Exclude .git
+        "**/.svn": true, // Exclude .svn
+        "**/.hg": true, // Exclude .hg
+        "**/.DS_Store": true, // Exclude .DS_Store
+        "**/.vscode": true, // Exclude .vscode folder
+        "**/.history": true, // Exclude extension history
+        "**__pytcache__": true, // Exclude Python cache
+        "**/.pytest_cache": true, // Exclude pytest cache
+        "**/.mypy_cache": true, // Exclude mypy cache
+        "**/.vscode-test": true // Exclude vscode-test artifacts
     },
 
     // =========================================================================
-    // 8. Source Control (Git & GitLens)
-    // Settings for the integrated Git functionality and the GitLens extension.
+    // Source Control / Git
+    // Git settings and behaviors
     // =========================================================================
-    "git.enableSmartCommit": true, // Commits all changes when there are no staged changes.
-    "git.autofetch": true, // Automatically fetches from all remotes periodically.
-    "git.confirmSync": false, // Disables confirmation before syncing with the remote repository.
-    "git.openRepositoryInParentFolders": "never", // Prevents searching parent folders for a Git repository.
-    "git.ignoreWindowsGit27Warning": true, // Suppresses the warning for outdated Git versions on Windows.
-    "git.terminalAuthentication": false, // Disables using the terminal for Git authentication.
-    "git.replaceTagsWhenPull": true, // Allows fetched tags to overwrite local tags on pull.
+    "git.enableSmartCommit": true, // Smart commit when nothing staged.
+    "git.autofetch": true, // Auto-fetch remotes.
+    "git.confirmSync": false, // Do not confirm on sync.
+    "git.openRepositoryInParentFolders": "never", // Never search parent folders for repos.
+    "git.ignoreWindowsGit27Warning": true, // Ignore old Git warning on Windows.
+    "git.terminalAuthentication": false, // Do not use terminal for git auth.
+    "git.replaceTagsWhenPull": true, // Allow replacing tags on pull.
 
     // =========================================================================
-    // 9. Integrated Terminal
-    // Configuration for the built-in terminal.
+    // Terminal
+    // Integrated terminal settings
     // =========================================================================
-    "terminal.integrated.smoothScrolling": true, // Enables smooth scrolling in the terminal.
-    "terminal.integrated.fontLigatures.enabled": true, // Enables font ligatures in the terminal.
-    "terminal.integrated.fontFamily": "", // Uses the default font family for the terminal.
-    "terminal.integrated.inheritEnv": false, // Prevents the terminal from inheriting VSCode's process environment.
-    "terminal.integrated.defaultProfile.linux": "zsh", // Sets 'zsh' as the default shell for Linux.
-    "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"], // Commands that should be handled by VSCode instead of the shell.
+    "terminal.integrated.smoothScrolling": true, // Smooth scroll in terminal.
+    "terminal.integrated.fontLigatures.enabled": true, // Enable ligatures in terminal font.
+    "terminal.integrated.fontFamily": "", // Terminal font family (default).
+    "terminal.integrated.inheritEnv": false, // Terminal should not inherit VS Code env.
+    "terminal.integrated.defaultProfile.linux": "zsh", // Default Linux shell profile.
+    "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"], // Commands handled by VS Code.
 
     // =========================================================================
-    // 10. Debugging
-    // Settings for the debugger behavior across different languages.
+    // Debugging
+    // Debugger defaults for various languages
     // =========================================================================
-    "debug.javascript.defaultRuntimeExecutable": { "pwa-node": "node" }, // Sets the default runtime for JavaScript debugging.
-    "debugpy.debugJustMyCode": true, // For Python, steps through user-written code only, skipping library code.
-    "java.debug.settings.showStaticVariables": true, // Shows static variables in the Java debugger view.
-    "java.debug.settings.showQualifiedNames": true, // Shows fully qualified names for classes in the Java debugger.
+    "debug.javascript.defaultRuntimeExecutable": { "pwa-node": "node" }, // JS debug runtime mapping.
+    "debugpy.debugJustMyCode": true, // Python: debug just my code.
+    "java.debug.settings.showStaticVariables": true, // Show static vars in Java debugger.
+    "java.debug.settings.showQualifiedNames": true, // Show qualified names in Java debugger.
 
     // =========================================================================
-    // 11. Remote Development & Sync
-    // Settings for remote connections (SSH) and settings synchronization.
+    // Remote Development & Sync
+    // SSH hosts, extension kinds and sync exclusions
     // =========================================================================
-    "remote.SSH.remotePlatform": {
-        // Specifies the OS of remote SSH hosts to help select extensions.
-        "LinuxServer": "linux",
-        "154.44.26.17": "linux"
-    },
-    "remote.extensionKind": {
-        // Specifies where certain extensions should run (UI vs. remote workspace).
-        "GitHub.copilot": ["ui"],
-        "GitHub.copilot-chat": ["ui"]
-    },
-    "remote.autoForwardPorts": false, // Disables automatic forwarding of ports from the remote machine.
-    "settingsSync.ignoredSettings": ["-C_Cpp.clang_format_path"], // Prevents specific settings from being synced.
-    "workbench.experimental.cloudChanges.partialMatches.enabled": true, // [Experimental] Enables partial matches for cloud changes.
+    "remote.SSH.remotePlatform": { "LinuxServer": "linux", "154.44.26.17": "linux" }, // Remote SSH platform mapping.
+    "remote.extensionKind": { "GitHub.copilot": ["ui"], "GitHub.copilot-chat": ["ui"] }, // Where extensions run (ui/remote).
+    "remote.autoForwardPorts": false, // Disable auto port forwarding for remotes.
+    "settingsSync.ignoredSettings": ["-C_Cpp.clang_format_path"], // Settings to ignore for sync.
+    "workbench.experimental.cloudChanges.partialMatches.enabled": true, // Experimental cloud changes partial match.
 
     // =========================================================================
-    //
-    //                 >> MODE SWITCHING MECHANISM <<
-    //
-    // Instructions:
-    // 1. To use NORMAL MODE: Keep the "NORMAL MODE SETTINGS" block uncommented.
-    // 2. To use COMPETITION MODE: Comment out the "NORMAL MODE SETTINGS" block
-    //    and uncomment the "COMPETITION MODE SETTINGS" block.
-    //
+    // Editor Behavior Modes
+    // NORMAL / COMPETITION toggle blocks (COMPETITION left commented)
     // =========================================================================
+    // NORMAL MODE: full features
+    "editor.codeActionsOnSave": {}, // Disable actions on save.
+    "editor.tabCompletion": "on", // Tab completion behavior.
+    "editor.suggest.preview": true, // Show suggestion preview in editor.
+    "editor.hover.enabled": false, // Disable hover tooltips in editor.
+    "editor.inlineSuggest.edits.allowCodeShifting": "always", // Inline suggestions may shift code.
+    "editor.inlineSuggest.edits.showCollapsed": true, // Show inline suggestions collapsed.
+    "editor.inlineCompletionsAccessibilityVerbose": true, // Verbose accessibility info for inline completions.
+    "github.copilot.enable": { "*": true }, // Enable GitHub Copilot for all languages.
+    "editor.inlayHints.enabled": "on", // Inlay hints visibility.
 
-    // -------------------------------------------------------------------------
-    // 12. NORMAL MODE SETTINGS (Default - Full Features)
-    // All helpers, formatters, and AI tools are ENABLED.
-    // -------------------------------------------------------------------------
-    "editor.defaultFormatter": "esbenp.prettier-vscode", // Sets Prettier as the default formatter for all languages.
-    "editor.formatOnSave": true, // Automatically formats the file on save.
-    "editor.formatOnPaste": true, // Automatically formats pasted content.
-    "editor.formatOnType": true, // Automatically formats a line after typing.
-    "editor.codeActionsOnSave": {
-        // Defines actions to run when a file is saved.
-        "source.fixAll.eslint": "explicit" // Runs ESLint's 'fixAll' command on save.
-    },
-    "files.autoSave": "onFocusChange", // Saves the file automatically when the editor loses focus.
-    "editor.tabCompletion": "on", // Enables completing snippets with the Tab key.
-    "editor.suggest.preview": true, // Shows a preview of the suggestion in the editor.
-    "editor.hover.enabled": false, // Disables the editor hover that shows information on mouse-over.
-    "editor.inlineSuggest.edits.allowCodeShifting": "always", // Allows inline suggestions to modify code around the insertion point.
-    "editor.inlineSuggest.edits.showCollapsed": true, // Shows inline suggestions in a collapsed state.
-    "editor.inlineCompletionsAccessibilityVerbose": true, // Provides more detailed accessibility information for inline completions.
-    "editor.inlayHints.padding": true, // Adds padding around inlay hints for better readability.
-    "editor.inlayHints.fontFamily": "", // Uses the default editor font for inlay hints.
-    "github.copilot.enable": { "*": true }, // Enables Copilot for all languages.
-    "python.analysis.aiCodeActions": { "implementAbstractClasses": true }, // Enables AI-powered actions to implement abstract classes.
-    "python.analysis.autoFormatStrings": true, // Automatically formats strings (e.g., converts to f-string).
-    "python.analysis.autoImportCompletions": true, // Provides completions that will also add the required import statement.
-    "python.analysis.completeFunctionParens": true, // Adds parentheses when completing function names.
-    "python.analysis.typeCheckingMode": "standard", // Sets the level of static type checking.
-    "python.analysis.inlayHints.callArgumentNames": "all", // Shows inlay hints for all argument names in function calls.
-    "python.analysis.inlayHints.functionReturnTypes": true, // Shows inlay hints for the return types of functions.
-    "python.analysis.inlayHints.pytestParameters": true, // Shows inlay hints for pytest parameters.
-    "python.analysis.inlayHints.variableTypes": true, // Shows inlay hints for variable types.
-    "C_Cpp.copilotHover": "enabled", // Enables Copilot-powered suggestions on hover for C/C++ code.
-    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true, // Shows inlay hints for types deduced with 'auto'.
-    "C_Cpp.inlayHints.parameterNames.enabled": true, // Shows inlay hints for parameter names in function calls.
-    "C_Cpp.inlayHints.referenceOperator.enabled": true, // Shows inlay hints for reference operators.
-
-    /*
-    // -------------------------------------------------------------------------
-    // 12. COMPETITION MODE SETTINGS (Minimal Features)
-    // All helpers, formatters, and AI tools are DISABLED.
-    // Uncomment this entire block to activate.
-    // -------------------------------------------------------------------------
-    "editor.defaultFormatter": null,                    // Disables the default formatter.
-    "editor.formatOnSave": false,                       // Disables format on save.
-    "editor.formatOnPaste": false,                      // Disables format on paste.
-    "editor.formatOnType": false,                       // Disables format on type.
-    "editor.codeActionsOnSave": {},                     // Disables all code actions on save.
-    "files.autoSave": "off",                            // Disables auto save.
-    "editor.tabCompletion": "off",                      // Disables Tab completion.
-    "editor.suggest.preview": false,                    // Hides suggestion previews.
-    "editor.hover.enabled": false,                      // Disables hover information.
-    "editor.inlineSuggest.edits.allowCodeShifting": "never", // Disallows inline suggestions from modifying surrounding code.
-    "editor.inlineSuggest.edits.showCollapsed": false,  // Disables collapsed inline suggestions.
-    "editor.inlineCompletionsAccessibilityVerbose": false, // Disables verbose accessibility info for inline completions.
-    "editor.inlayHints.enabled": "off",                 // Globally disables all inlay hints.
-    "github.copilot.enable": { "*": false },            // Disables Copilot for all languages.
-    "python.analysis.aiCodeActions": { "implementAbstractClasses": false }, // Disables Python AI code actions.
-    "python.analysis.autoFormatStrings": false,         // Disables auto-formatting Python strings.
-    "python.analysis.autoImportCompletions": false,     // Disables auto-import completions.
-    "python.analysis.completeFunctionParens": false,    // Disables auto-adding parentheses for functions.
-    "python.analysis.typeCheckingMode": "off",          // Disables all Python type checking.
-    "python.analysis.inlayHints.callArgumentNames": "off", // Hides Python call argument inlay hints.
-    "python.analysis.inlayHints.functionReturnTypes": false, // Hides Python return type inlay hints.
-    "python.analysis.inlayHints.pytestParameters": false, // Hides pytest parameter inlay hints.
-    "python.analysis.inlayHints.variableTypes": false,  // Hides Python variable type inlay hints.
-    "C_Cpp.copilotHover": "disabled",                   // Disables C/C++ Copilot hover.
-    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": false, // Hides C/C++ 'auto' type inlay hints.
-    "C_Cpp.inlayHints.parameterNames.enabled": false,   // Hides C/C++ parameter name inlay hints.
-    "C_Cpp.inlayHints.referenceOperator.enabled": false, // Hides C/C++ reference operator inlay hints.
-    */
+    // COMPETITION MODE (commented): minimal features, all helpers disabled
+    // "editor.codeActionsOnSave": {}, // Disable actions on save.
+    // "editor.tabCompletion": "off", // Disable tab completion.
+    // "editor.hover.enabled": true, // Enable hover tooltips in competition (example).
+    // "editor.suggest.preview": false, // Hide suggestion preview.
+    // "editor.inlineSuggest.edits.allowCodeShifting": "never", // Prevent code shifting.
+    // "editor.inlineSuggest.edits.showCollapsed": false, // Do not show inline suggestions collapsed.
+    // "editor.inlineCompletionsAccessibilityVerbose": false, // Disable verbose inline completion accessibility.
+    // "editor.inlayHints.enabled": "off", // Turn off inlay hints globally.
+    // "github.copilot.enable": { "*": false }, // Disable Copilot globally.
 
     // =========================================================================
-    // 13. Language-Specific Settings (Formatting Overrides)
-    // Overrides for specific programming languages.
+    // Language-specific overrides
+    // Default formatters and per-language tweaks
     // =========================================================================
-    "[c]": { "editor.defaultFormatter": "ms-vscode.cpptools" }, // Sets the default formatter for C files.
-    "[cpp]": { "editor.defaultFormatter": "ms-vscode.cpptools" }, // Sets the default formatter for C++ files.
-    "[java]": { "editor.defaultFormatter": "redhat.java" }, // Sets the default formatter for Java files.
-    "[tex]": {
-        // Settings for TeX files.
-        "editor.defaultFormatter": "James-Yu.latex-workshop",
-        "editor.tabSize": 4
-    },
+    "[c]": { "editor.defaultFormatter": "ms-vscode.cpptools" }, // C files formatter.
+    "[cpp]": { "editor.defaultFormatter": "ms-vscode.cpptools" }, // C++ files formatter.
+    "[java]": { "editor.defaultFormatter": "redhat.java" }, // Java files formatter.
+    "[tex]": { "editor.defaultFormatter": "James-Yu.latex-workshop", "editor.tabSize": 4 }, // TeX settings.
     "[latex]": {
-        // Settings for LaTeX files.
         "editor.defaultFormatter": "James-Yu.latex-workshop",
         "editor.formatOnSave": true,
         "editor.suggestSelection": "recentlyUsedByPrefix"
-    },
-    "[typst]": { "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" }, // Custom word separators for Typst files.
-    "[typst-code]": {
-        // Custom word separators for Typst code blocks.
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
-    },
+    }, // LaTeX settings.
+    "[typst]": { "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" }, // Typst word separators.
+    "[typst-code]": { "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" }, // Typst-code word separators.
 
     // =========================================================================
-    // 14. Extension: GitHub Copilot / Chat
-    // Configuration for GitHub Copilot and its chat features.
+    // GitHub Copilot / Chat and Assistant
+    // Chat features and language/context toggles
     // =========================================================================
-    "github.copilot.chat.scopeSelection": true, // Allows Copilot Chat to understand the selected code scope.
-    "github.copilot.chat.editor.temporalContext.enabled": true, // Allows chat to use context from recently viewed files.
-    "github.copilot.chat.edits.temporalContext.enabled": true, // Enables temporal context for code edits made via chat.
-    "github.copilot.chat.generateTests.codeLens": true, // Shows a CodeLens shortcut to generate tests.
-    "github.copilot.nextEditSuggestions.enabled": true, // Enables suggestions for the next logical code edit.
-    "github.copilot.nextEditSuggestions.fixes": true, // Allows next edit suggestions to include fixes.
-    "github.copilot.chat.codesearch.enabled": true, // Enables code search capabilities within Copilot Chat.
-    "github.copilot.chat.agent.thinkingTool": true, // Enables the "thinking" tool indicator in the chat agent.
-    "github.copilot.chat.languageContext.typescript.enabled": true, // Enables deeper TypeScript context for chat.
-    "github.copilot.chat.languageContext.inline.typescript.enabled": true, // Enables inline TypeScript context for chat.
-    "github.copilot.chat.languageContext.fix.typescript.enabled": true, // Enables TypeScript context for generating fixes.
-    "chat.agent.enabled": true, // A general setting to enable the chat agent.
-    "chat.editing.confirmEditRequestRetry": false, // Disables confirmation when retrying a chat edit request.
-    "chat.mcp.enabled": true, // Enables a multi-chat processing feature.
+    "github.copilot.chat.scopeSelection": true, // Allow scope selection for Copilot Chat.
+    "github.copilot.chat.editor.temporalContext.enabled": true, // Enable temporal editor context for chat.
+    "github.copilot.chat.edits.temporalContext.enabled": true, // Enable temporal edits context.
+    "github.copilot.chat.generateTests.codeLens": true, // Show CodeLens to generate tests.
+    "github.copilot.nextEditSuggestions.enabled": true, // Enable next edit suggestions.
+    "github.copilot.nextEditSuggestions.fixes": true, // Allow fixes in next edit suggestions.
+    "github.copilot.chat.codesearch.enabled": true, // Enable code search in Copilot Chat.
+    "github.copilot.chat.agent.thinkingTool": true, // Show thinking tool indicator.
+    "github.copilot.chat.languageContext.typescript.enabled": true, // TypeScript language context in chat.
+    "github.copilot.chat.languageContext.inline.typescript.enabled": true, // Inline TypeScript context.
+    "github.copilot.chat.languageContext.fix.typescript.enabled": true, // Fix generation TypeScript context.
+    "chat.agent.enabled": true, // Enable chat agent feature.
+    "chat.editing.confirmEditRequestRetry": false, // Do not confirm when retrying chat edits.
+    "chat.mcp.enabled": true, // Enable multi-chat processing.
+
+    // Inlay hints and analysis settings
+    "editor.inlayHints.padding": true, // Add padding for inlay hints.
+    "editor.inlayHints.fontFamily": "", // Font family for inlay hints (default).
+    "python.analysis.aiCodeActions": { "implementAbstractClasses": true }, // Enable AI code actions for Python.
+    "python.analysis.autoFormatStrings": true, // Auto-format Python strings.
+    "python.analysis.autoImportCompletions": true, // Auto import on completion for Python.
+    "python.analysis.completeFunctionParens": true, // Add parens when completing functions.
+    "python.analysis.typeCheckingMode": "standard", // Python type checking mode.
+    "python.analysis.inlayHints.callArgumentNames": "all", // Show call argument names inlay hints.
+    "python.analysis.inlayHints.functionReturnTypes": true, // Show function return type inlay hints.
+    "python.analysis.inlayHints.pytestParameters": true, // Show pytest parameter inlay hints.
+    "python.analysis.inlayHints.variableTypes": true, // Show variable type inlay hints.
+    "C_Cpp.copilotHover": "enabled", // Enable Copilot hover in C/C++.
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true, // Show auto declaration types on C/C++.
+    "C_Cpp.inlayHints.parameterNames.enabled": true, // Show parameter name hints in C/C++.
+    "C_Cpp.inlayHints.referenceOperator.enabled": true, // Show reference operator hints in C/C++.
 
     // =========================================================================
-    // 15. Extension: GitHub Pull Requests
-    // Settings for the GitHub Pull Requests and Issues extension.
+    // GitHub Pull Requests extension
+    // PR related experimental and default behaviors
     // =========================================================================
-    "githubPullRequests.experimental.chat": true, // [Experimental] Enables chat features within the PR view.
-    "githubPullRequests.experimental.useQuickChat": true, // [Experimental] Enables a quick chat interface for PRs.
-    "githubPullRequests.pullRequestDescription": "Copilot", // Sets the default description content for new PRs.
-    "githubPullRequests.createOnPublishBranch": "never", // Prevents automatically creating a PR when publishing a new branch.
+    "githubPullRequests.experimental.chat": true, // Experimental chat in PR view.
+    "githubPullRequests.experimental.useQuickChat": true, // Enable quick chat for PRs.
+    "githubPullRequests.pullRequestDescription": "Copilot", // Default PR description.
+    "githubPullRequests.createOnPublishBranch": "never", // Do not auto-create PR on publish.
 
     // =========================================================================
-    // 16. Extension: C/C++
-    // Settings for the Microsoft C/C++ extension, including IntelliSense and formatting.
+    // C/C++ extension settings
+    // IntelliSense, formatting and inlay hints for C/C++
     // =========================================================================
-    "C_Cpp.intelliSenseEngine": "default", // Uses the default IntelliSense engine.
-    "C_Cpp.formatting": "clangFormat", // Specifies 'clang-format' as the formatting engine.
-    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools", // Sets the default configuration provider.
-    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true, // Shows 'auto' type hints on the left of the variable.
-    "C_Cpp.inlayHints.referenceOperator.showSpace": true, // Adds a space after the reference operator hint.
-    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true, // Inserts a space after the closing parenthesis of a C-style cast.
-    "C_Cpp.vcFormat.space.beforeComma": true, // Inserts a space before a comma.
-    "C_Cpp.vcFormat.space.beforeEmptySquareBrackets": true, // Inserts a space before empty square brackets.
-    "C_Cpp.vcFormat.space.beforeFunctionOpenParenthesis": "insert", // Inserts a space before the opening parenthesis of a function.
-    "C_Cpp.vcFormat.space.beforeInitializerListOpenBrace": true, // Inserts a space before the opening brace of an initializer list.
-    "C_Cpp.vcFormat.space.beforeLambdaOpenParenthesis": true, // Inserts a space before the opening parenthesis of a lambda.
-    "C_Cpp.vcFormat.space.beforeOpenSquareBracket": true, // Inserts a space before an opening square bracket.
-    "C_Cpp.vcFormat.space.betweenEmptyBraces": true, // Inserts a space between empty braces {}.
-    "C_Cpp.vcFormat.space.betweenEmptyLambdaBrackets": true, // Inserts a space between empty lambda brackets [].
-    "C_Cpp.vcFormat.space.betweenEmptyParameterListParentheses": true, // Inserts a space between empty parentheses in a parameter list.
-    "C_Cpp.vcFormat.space.betweenEmptySquareBrackets": true, // Inserts a space between empty square brackets [].
-    "C_Cpp.vcFormat.space.insertAfterSemicolon": true, // Inserts a space after a semicolon.
-    "C_Cpp.vcFormat.space.withinCastParentheses": true, // Inserts a space within the parentheses of a C-style cast.
-    "C_Cpp.vcFormat.space.withinControlFlowStatementParentheses": true, // Inserts a space within the parentheses of a control flow statement.
-    "C_Cpp.vcFormat.space.withinExpressionParentheses": true, // Inserts a space within expression parentheses.
-    "C_Cpp.vcFormat.space.withinLambdaBrackets": true, // Inserts a space within lambda brackets.
-    "C_Cpp.vcFormat.space.withinParameterListParentheses": true, // Inserts a space within a parameter list's parentheses.
-    "C_Cpp.vcFormat.space.withinSquareBrackets": true, // Inserts a space within square brackets.
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine", // Places the opening brace of a block on a new line.
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine", // Places the opening brace of a function on a new line.
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine", // Places the opening brace of a lambda on the same line.
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "newLine", // Places the opening brace of a namespace on a new line.
-    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine", // Places the opening brace of a type on the same line.
-    "C_Cpp.vcFormat.newLine.beforeWhileInDoWhile": true, // Places the 'while' of a do-while loop on a new line.
-    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true, // Keeps the closing brace of an empty function on the same line.
-    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true, // Keeps the closing brace of an empty type on the same line.
+    "C_Cpp.intelliSenseEngine": "default", // C/C++ IntelliSense engine.
+    "C_Cpp.formatting": "clangFormat", // Use clang-format for C/C++.
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools", // Default configuration provider.
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true, // Show auto type hints on left.
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true, // Show space after reference operator hint.
+    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true, // Space after cast close parenthesis.
+    "C_Cpp.vcFormat.space.beforeComma": true, // Space before comma.
+    "C_Cpp.vcFormat.space.beforeEmptySquareBrackets": true, // Space before empty []
+    "C_Cpp.vcFormat.space.beforeFunctionOpenParenthesis": "insert", // Insert space before function '('.
+    "C_Cpp.vcFormat.space.beforeInitializerListOpenBrace": true, // Space before initializer list brace.
+    "C_Cpp.vcFormat.space.beforeLambdaOpenParenthesis": true, // Space before lambda open parenthesis.
+    "C_Cpp.vcFormat.space.beforeOpenSquareBracket": true, // Space before '['.
+    "C_Cpp.vcFormat.space.betweenEmptyBraces": true, // Space between empty braces {}.
+    "C_Cpp.vcFormat.space.betweenEmptyLambdaBrackets": true, // Space between empty lambda brackets [].
+    "C_Cpp.vcFormat.space.betweenEmptyParameterListParentheses": true, // Space between empty parameter list ().
+    "C_Cpp.vcFormat.space.betweenEmptySquareBrackets": true, // Space between empty square brackets [].
+    "C_Cpp.vcFormat.space.insertAfterSemicolon": true, // Insert space after semicolon.
+    "C_Cpp.vcFormat.space.withinCastParentheses": true, // Space within cast parentheses.
+    "C_Cpp.vcFormat.space.withinControlFlowStatementParentheses": true, // Space within control flow parentheses.
+    "C_Cpp.vcFormat.space.withinExpressionParentheses": true, // Space within expression parentheses.
+    "C_Cpp.vcFormat.space.withinLambdaBrackets": true, // Space within lambda brackets.
+    "C_Cpp.vcFormat.space.withinParameterListParentheses": true, // Space within parameter list parentheses.
+    "C_Cpp.vcFormat.space.withinSquareBrackets": true, // Space within square brackets.
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "newLine", // Place block opening brace on new line.
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "newLine", // Place function opening brace on new line.
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine", // Lambda opening brace on same line.
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "newLine", // Namespace opening brace on new line.
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine", // Type opening brace on same line.
+    "C_Cpp.vcFormat.newLine.beforeWhileInDoWhile": true, // Put 'while' of do-while on new line.
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true, // Keep empty function closing brace on same line.
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true, // Keep empty type closing brace on same line.
 
     // =========================================================================
-    // 17. Extension: LaTeX Workshop
-    // In-depth configuration for building and viewing LaTeX documents.
+    // LaTeX Workshop extension
+    // Build, view and formatting configuration for LaTeX
     // =========================================================================
-    "latex-workshop.latex.autoBuild.run": "never", // Disables automatic building on file change.
-    "latex-workshop.showContextMenu": true, // Shows LaTeX Workshop-specific items in the context menu.
-    "latex-workshop.intellisense.package.enabled": true, // Enables IntelliSense for LaTeX packages.
-    "latex-workshop.message.error.show": false, // Hides popup messages on build errors.
-    "latex-workshop.message.warning.show": false, // Hides popup messages on build warnings.
-    "latex-workshop.latex.outDir": "%DIR%", // Sets the output directory to be the same as the root file's directory.
-    "latex-workshop.latex.autoClean.run": "onFailed", // Cleans auxiliary files only after a failed build.
-    "latex-workshop.latex.recipe.default": "lastUsed", // Uses the most recently used recipe as the default for the next build.
-    "latex-workshop.view.pdf.viewer": "external", // Uses an external application to view the generated PDF.
-    "latex-workshop.view.pdf.external.viewer.command": "okular", // Specifies 'okular' as the external PDF viewer.
-    "latex-workshop.view.pdf.external.viewer.args": ["--unique", "%PDF%"], // Arguments to pass to the external viewer.
-    "latex-workshop.view.pdf.external.synctex.command": "okular", // Command for reverse SyncTeX (PDF to source).
+    "latex-workshop.latex.autoBuild.run": "never", // Do not auto-build LaTeX on changes.
+    "latex-workshop.showContextMenu": true, // Show LaTeX context menu items.
+    "latex-workshop.intellisense.package.enabled": true, // Enable LaTeX package IntelliSense.
+    "latex-workshop.message.error.show": false, // Do not show error popups for builds.
+    "latex-workshop.message.warning.show": false, // Do not show warning popups for builds.
+    "latex-workshop.latex.outDir": "%DIR%", // Output directory same as root file.
+    "latex-workshop.latex.autoClean.run": "onFailed", // Auto-clean only on failed builds.
+    "latex-workshop.latex.recipe.default": "lastUsed", // Default to last used recipe.
+    "latex-workshop.view.pdf.viewer": "external", // Use external PDF viewer by default.
+    "latex-workshop.view.pdf.external.viewer.command": "D:/SumatraPDF/SumatraPDF.exe", // External PDF viewer command.
+    "latex-workshop.view.pdf.external.viewer.args": ["--unique", "%PDF%"], // Arguments for external viewer.
+    "latex-workshop.view.pdf.external.synctex.command": "D:/SumatraPDF/SumatraPDF.exe", // Synctex external command.
     "latex-workshop.view.pdf.external.synctex.args": [
-        // Arguments for reverse SyncTeX.
-        "--unique",
-        "%PDF%#src:%LINE%%TEX%"
+        "-forward-search", // Forward search arg
+        "%TEX%", // File path placeholder
+        "%LINE%", // Line placeholder
+        "-reuse-instance", // Reuse viewer instance
+        "-inverse-search", // Inverse search mode
+        "\"D:/VSCode/Code.exe\" \"D:/VSCode/resources/app/out/cli.js\" -r -g \"%f:%l\"", // Inverse-search command (note: adjust path if needed)
+        "%PDF%" // PDF placeholder
     ],
-    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // Sets double-click for forward SyncTeX in the internal viewer.
-    "latex-workshop.view.pdf.ref.viewer": "auto", // Automatically selects the viewer for PDF references.
-    "latex-workshop.formatting.latex": "latexindent", // Sets 'latexindent' as the formatter for LaTeX files.
-    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/x86_64-linux/latexindent", // Path to the latexindent executable.
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // Internal Synctex forward keybinding.
+    "latex-workshop.view.pdf.ref.viewer": "auto", // Auto-select PDF reference viewer.
+    "latex-workshop.formatting.latex": "latexindent", // Use latexindent formatter.
+    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/x86_64-linux/latexindent", // Path to latexindent.
     "latex-workshop.formatting.latexindent.args": [
-        // Arguments for the latexindent formatter.
         "-c",
         "%DIR%/",
         "%TMPFILE%",
@@ -400,28 +345,17 @@
         "%WORKSPACE_FOLDER%/.latexindent.yaml",
         "-m",
         "-g=/dev/null"
-    ],
+    ], // Args for latexindent.
     "latex-workshop.latex.tools": [
-        // Defines the available LaTeX compilation tools.
         {
             "name": "xelatex",
             "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
+            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOCFILE%"]
         },
         {
             "name": "pdflatex",
             "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
+            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOCFILE%"]
         },
         {
             "name": "latexmk",
@@ -439,27 +373,16 @@
         { "name": "biber", "command": "biber", "args": ["%DOCFILE%"] }
     ],
     "latex-workshop.latex.recipes": [
-        // Defines sequences of tools (recipes) for building documents.
         { "name": "XeLaTeX", "tools": ["xelatex"] },
         { "name": "XeLaTeX^2", "tools": ["xelatex", "xelatex"] },
         { "name": "PDFLaTeX", "tools": ["pdflatex"] },
         { "name": "BibTeX", "tools": ["bibtex"] },
         { "name": "LaTeXmk", "tools": ["latexmk"] },
-        {
-            "name": "XeLaTeX -> BibTeX -> XeLaTeX^2",
-            "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
-        },
-        {
-            "name": "XeLaTeX -> Biber -> XeLaTeX^2",
-            "tools": ["xelatex", "biber", "xelatex", "xelatex"]
-        },
-        {
-            "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2",
-            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
-        }
+        { "name": "XeLaTeX -> BibTeX -> XeLaTeX^2", "tools": ["xelatex", "bibtex", "xelatex", "xelatex"] },
+        { "name": "XeLaTeX -> Biber -> XeLaTeX^2", "tools": ["xelatex", "biber", "xelatex", "xelatex"] },
+        { "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2", "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"] }
     ],
     "latex-workshop.latex.clean.fileTypes": [
-        // Specifies file types to be removed by the 'Clean' command.
         "*.aux",
         "*.bbl",
         "*.blg",
@@ -480,47 +403,41 @@
         "*.log",
         "*.fdb_latexmk",
         "*.synctex.gz"
-    ],
+    ], // File types to clean.
 
     // =========================================================================
-    // 18. Other Extension Settings
-    // Configuration for various other extensions.
+    // Other extensions and miscellaneous settings
     // =========================================================================
-    "prettier.tabWidth": 4, // Sets the tab width for Prettier to 4.
-    "prettier.useTabs": false, // Configures Prettier to use spaces instead of tabs.
-    "prettier.proseWrap": "preserve", // Tells Prettier to not wrap prose (like in Markdown).
-    "prettier.bracketSameLine": true, // Puts the '>' of multi-line tags on the last line.
-    "prettier.singleAttributePerLine": true, // Enforces one attribute per line in HTML/JSX/Vue.
-    "emmet.triggerExpansionOnTab": true, // Enables expanding Emmet abbreviations with the Tab key.
-    "emmet.showAbbreviationSuggestions": true, // Shows Emmet abbreviation suggestions.
-    "emmet.showExpandedAbbreviation": "always", // Always shows a preview of the expanded Emmet abbreviation.
-    "emmet.includeLanguages": {
-        // Enables Emmet in additional languages.
-        "vue-html": "html",
-        "vue": "html",
-        "wpy": "html"
-    },
-    "cmake.configureOnOpen": true, // Automatically runs CMake configure when a project is opened.
-    "cmake.additionalCompilerSearchDirs": ["/usr/bin"], // Additional directories to search for compilers.
-    "cmake.generator": "Ninja", // Sets 'Ninja' as the CMake generator.
-    "cmake.buildDirectory": "${workspaceFolder}/build", // Specifies the directory for build artifacts.
-    "cmake.showNotAllDocumentsSavedQuestion": false, // Disables the prompt about unsaved files before configuring.
-    "codesnap.backgroundColor": "#f2f2f2", // Sets the background color for CodeSnap screenshots.
-    "codesnap.boxShadow": "5px 5px 60px 0px #888888", // Defines the box shadow for the screenshot container.
-    "codesnap.containerPadding": "3em", // Sets the padding inside the screenshot container.
-    "codesnap.roundedCorners": true, // Enables rounded corners for the screenshot.
-    "codesnap.showWindowTitle": true, // Shows a window title bar in the screenshot.
-    "codesnap.showLineNumbers": true, // Shows line numbers in the screenshot.
-    "codesnap.realLineNumbers": true, // Uses the actual line numbers from the editor.
-    "codesnap.transparentBackground": false, // Disables a transparent background.
-    "codesnap.target": "container", // Configures CodeSnap to capture the container element.
-    "css.format.spaceAroundSelectorSeparator": true, // Ensures spaces around CSS selector combinators (e.g., '>', '+').
-    "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml", // Path to an Eclipse XML file for Java formatting rules.
-    "tinymist.formatterMode": "typstyle", // Sets the formatter mode for the Tinymist (Typst) extension.
-    "tinymist.formatterIndentSize": 4, // Sets the indent size for the Tinymist formatter.
-    "masmtasm.ASM.emulator": "dosbox", // Sets DOSBox as the emulator for the MASM/TASM extension.
-    "masmtasm.ASM.assembler": "TASM", // Sets TASM as the assembler.
-    "vscode-office.openOutline": false, // Disables automatically opening the outline for Office files.
-    "vscode-office.editorTheme": "Auto", // Automatically sets the theme for the Office viewer.
-    "redhat.telemetry.enabled": true // Enables telemetry data collection for Red Hat extensions.
+    "prettier.tabWidth": 4, // Prettier tab width.
+    "prettier.useTabs": false, // Use spaces in Prettier.
+    "prettier.proseWrap": "preserve", // Preserve prose wrapping.
+    "prettier.bracketSameLine": true, // Put > of multi-line tags on last line.
+    "prettier.singleAttributePerLine": true, // Single attribute per line in markup.
+    "emmet.triggerExpansionOnTab": true, // Expand Emmet with Tab.
+    "emmet.showAbbreviationSuggestions": true, // Show Emmet suggestion entries.
+    "emmet.showExpandedAbbreviation": "always", // Always preview Emmet expansions.
+    "emmet.includeLanguages": { "vue-html": "html", "vue": "html", "wpy": "html" }, // Enable Emmet for extra languages.
+    "cmake.configureOnOpen": true, // Run CMake configure on open.
+    "cmake.additionalCompilerSearchDirs": ["/usr/bin"], // Extra compiler search dirs.
+    "cmake.generator": "Ninja", // CMake generator.
+    "cmake.buildDirectory": "${workspaceFolder}/build", // Build output directory.
+    "cmake.showNotAllDocumentsSavedQuestion": false, // Do not ask about unsaved docs before configure.
+    "codesnap.backgroundColor": "#f2f2f2", // CodeSnap background color.
+    "codesnap.boxShadow": "5px 5px 60px 0px #888888", // CodeSnap box shadow.
+    "codesnap.containerPadding": "3em", // CodeSnap container padding.
+    "codesnap.roundedCorners": true, // CodeSnap rounded corners.
+    "codesnap.showWindowTitle": true, // Show window title in CodeSnap.
+    "codesnap.showLineNumbers": true, // Show line numbers in CodeSnap.
+    "codesnap.realLineNumbers": true, // Use real line numbers in CodeSnap.
+    "codesnap.transparentBackground": false, // Do not use transparent background for CodeSnap.
+    "codesnap.target": "container", // CodeSnap capture target.
+    "css.format.spaceAroundSelectorSeparator": true, // Space around selector separators in CSS formatter.
+    "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml", // Java formatter settings file path.
+    "tinymist.formatterMode": "typstyle", // Tinymist formatter mode.
+    "tinymist.formatterIndentSize": 4, // Tinymist indent size.
+    "masmtasm.ASM.emulator": "dosbox", // MASM/TASM emulator.
+    "masmtasm.ASM.assembler": "TASM", // MASM/TASM assembler.
+    "vscode-office.openOutline": false, // Do not auto-open outline for Office files.
+    "vscode-office.editorTheme": "Auto", // Office viewer theme.
+    "redhat.telemetry.enabled": true // Red Hat extension telemetry enabled.
 }
