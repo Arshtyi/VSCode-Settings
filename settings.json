@@ -178,8 +178,14 @@
     // Remote Development & Sync
     // SSH hosts, extension kinds and sync exclusions
     // =========================================================================
-    "remote.SSH.remotePlatform": { "LinuxServer": "linux", "154.44.26.17": "linux" }, // Remote SSH platform mapping.
-    "remote.extensionKind": { "GitHub.copilot": ["ui"], "GitHub.copilot-chat": ["ui"] }, // Where extensions run (ui/remote).
+    "remote.SSH.remotePlatform": {
+        "LinuxServer": "linux",
+        "154.44.26.17": "linux"
+    }, // Remote SSH platform mapping.
+    "remote.extensionKind": {
+        "GitHub.copilot": ["ui"],
+        "GitHub.copilot-chat": ["ui"]
+    }, // Where extensions run (ui/remote).
     "remote.autoForwardPorts": false, // Disable auto port forwarding for remotes.
     "settingsSync.ignoredSettings": ["-C_Cpp.clang_format_path"], // Settings to ignore for sync.
     "workbench.experimental.cloudChanges.partialMatches.enabled": true, // Experimental cloud changes partial match.
@@ -216,15 +222,21 @@
     // =========================================================================
     "[c]": { "editor.defaultFormatter": "ms-vscode.cpptools" }, // C files formatter.
     "[cpp]": { "editor.defaultFormatter": "ms-vscode.cpptools" }, // C++ files formatter.
+    "[csharp]": { "editor.defaultFormatter": "ms-dotnettools.csharp" }, // C# files formatter.},
     "[java]": { "editor.defaultFormatter": "redhat.java" }, // Java files formatter.
-    "[tex]": { "editor.defaultFormatter": "James-Yu.latex-workshop", "editor.tabSize": 4 }, // TeX settings.
+    "[tex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.tabSize": 4
+    }, // TeX settings.
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop",
         "editor.formatOnSave": true,
         "editor.suggestSelection": "recentlyUsedByPrefix"
     }, // LaTeX settings.
     "[typst]": { "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" }, // Typst word separators.
-    "[typst-code]": { "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?" }, // Typst-code word separators.
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    }, // Typst-code word separators.
 
     // =========================================================================
     // GitHub Copilot / Chat and Assistant
@@ -242,8 +254,7 @@
     "github.copilot.chat.languageContext.inline.typescript.enabled": true, // Inline TypeScript context.
     "github.copilot.chat.languageContext.fix.typescript.enabled": true, // Fix generation TypeScript context.
     "chat.agent.enabled": true, // Enable chat agent feature.
-    "chat.editing.confirmEditRequestRetry": false, // Do not confirm when retrying chat edits.
-    "chat.mcp.enabled": true, // Enable multi-chat processing.
+    "chat.editing.confirmEditRequestRetry": false, // Enable multi-chat processing.
 
     // Inlay hints and analysis settings
     "editor.inlayHints.padding": true, // Add padding for inlay hints.
@@ -320,22 +331,29 @@
     "latex-workshop.latex.autoClean.run": "onFailed", // Auto-clean only on failed builds.
     "latex-workshop.latex.recipe.default": "lastUsed", // Default to last used recipe.
     "latex-workshop.view.pdf.viewer": "external", // Use external PDF viewer by default.
-    "latex-workshop.view.pdf.external.viewer.command": "D:/SumatraPDF/SumatraPDF.exe", // External PDF viewer command.
-    "latex-workshop.view.pdf.external.viewer.args": ["--unique", "%PDF%"], // Arguments for external viewer.
-    "latex-workshop.view.pdf.external.synctex.command": "D:/SumatraPDF/SumatraPDF.exe", // Synctex external command.
+    "latex-workshop.view.pdf.external.viewer.args": ["--unique", "%PDF%"], // Arguments to pass to the external viewer.
+    "latex-workshop.view.pdf.external.viewer.command": "okular", // Specifies 'okular' as the external PDF viewer.
+    "latex-workshop.view.pdf.external.synctex.command": "okular", // Command for reverse SyncTeX (PDF to source).
     "latex-workshop.view.pdf.external.synctex.args": [
-        "-forward-search", // Forward search arg
-        "%TEX%", // File path placeholder
-        "%LINE%", // Line placeholder
-        "-reuse-instance", // Reuse viewer instance
-        "-inverse-search", // Inverse search mode
-        "\"D:/VSCode/Code.exe\" \"D:/VSCode/resources/app/out/cli.js\" -r -g \"%f:%l\"", // Inverse-search command (note: adjust path if needed)
-        "%PDF%" // PDF placeholder
+        // Arguments for reverse SyncTeX.
+        "--unique",
+        "%PDF%#src:%LINE%%TEX%"
     ],
-    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // Internal Synctex forward keybinding.
-    "latex-workshop.view.pdf.ref.viewer": "auto", // Auto-select PDF reference viewer.
-    "latex-workshop.formatting.latex": "latexindent", // Use latexindent formatter.
-    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/x86_64-linux/latexindent", // Path to latexindent.
+    // "latex-workshop.view.pdf.external.viewer.command": "D:/SumatraPDF/SumatraPDF.exe", // External PDF viewer command.
+    // "latex-workshop.view.pdf.external.synctex.command": "D:/SumatraPDF/SumatraPDF.exe", // Synctex external command.
+    // "latex-workshop.view.pdf.external.synctex.args": [
+    //     "-forward-search", // Forward search arg
+    //     "%TEX%", // File path placeholder
+    //     "%LINE%", // Line placeholder
+    //     "-reuse-instance", // Reuse viewer instance
+    //     "-inverse-search", // Inverse search mode
+    //     "\"D:/VSCode/Code.exe\" \"D:/VSCode/resources/app/out/cli.js\" -r -g \"%f:%l\"", // Inverse-search command (note: adjust path if needed)
+    //     "%PDF%" // PDF placeholder
+    // ],
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", // Sets double-click for forward SyncTeX in the internal viewer.
+    "latex-workshop.view.pdf.ref.viewer": "auto", // Automatically selects the viewer for PDF references.
+    "latex-workshop.formatting.latex": "latexindent", // Sets 'latexindent' as the formatter for LaTeX files.
+    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/x86_64-linux/latexindent", // Path to the latexindent executable.
     "latex-workshop.formatting.latexindent.args": [
         "-c",
         "%DIR%/",
@@ -345,7 +363,7 @@
         "%WORKSPACE_FOLDER%/.latexindent.yaml",
         "-m",
         "-g=/dev/null"
-    ], // Args for latexindent.
+    ],
     "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
@@ -378,9 +396,18 @@
         { "name": "PDFLaTeX", "tools": ["pdflatex"] },
         { "name": "BibTeX", "tools": ["bibtex"] },
         { "name": "LaTeXmk", "tools": ["latexmk"] },
-        { "name": "XeLaTeX -> BibTeX -> XeLaTeX^2", "tools": ["xelatex", "bibtex", "xelatex", "xelatex"] },
-        { "name": "XeLaTeX -> Biber -> XeLaTeX^2", "tools": ["xelatex", "biber", "xelatex", "xelatex"] },
-        { "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2", "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"] }
+        {
+            "name": "XeLaTeX -> BibTeX -> XeLaTeX^2",
+            "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+        },
+        {
+            "name": "XeLaTeX -> Biber -> XeLaTeX^2",
+            "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+        },
+        {
+            "name": "PDFLaTeX -> BibTeX -> PDFLaTeX^2",
+            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+        }
     ],
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux",
@@ -416,21 +443,11 @@
     "emmet.triggerExpansionOnTab": true, // Expand Emmet with Tab.
     "emmet.showAbbreviationSuggestions": true, // Show Emmet suggestion entries.
     "emmet.showExpandedAbbreviation": "always", // Always preview Emmet expansions.
-    "emmet.includeLanguages": { "vue-html": "html", "vue": "html", "wpy": "html" }, // Enable Emmet for extra languages.
-    "cmake.configureOnOpen": true, // Run CMake configure on open.
-    "cmake.additionalCompilerSearchDirs": ["/usr/bin"], // Extra compiler search dirs.
-    "cmake.generator": "Ninja", // CMake generator.
-    "cmake.buildDirectory": "${workspaceFolder}/build", // Build output directory.
-    "cmake.showNotAllDocumentsSavedQuestion": false, // Do not ask about unsaved docs before configure.
-    "codesnap.backgroundColor": "#f2f2f2", // CodeSnap background color.
-    "codesnap.boxShadow": "5px 5px 60px 0px #888888", // CodeSnap box shadow.
-    "codesnap.containerPadding": "3em", // CodeSnap container padding.
-    "codesnap.roundedCorners": true, // CodeSnap rounded corners.
-    "codesnap.showWindowTitle": true, // Show window title in CodeSnap.
-    "codesnap.showLineNumbers": true, // Show line numbers in CodeSnap.
-    "codesnap.realLineNumbers": true, // Use real line numbers in CodeSnap.
-    "codesnap.transparentBackground": false, // Do not use transparent background for CodeSnap.
-    "codesnap.target": "container", // CodeSnap capture target.
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "wpy": "html"
+    }, // Enable Emmet for extra languages.
     "css.format.spaceAroundSelectorSeparator": true, // Space around selector separators in CSS formatter.
     "java.format.settings.url": "/home/arshtyi/.vscode/extensions/redhat.java-1.41.1-win32-x64/formatters/eclipse-formatter.xml", // Java formatter settings file path.
     "tinymist.formatterMode": "typstyle", // Tinymist formatter mode.
@@ -439,5 +456,6 @@
     "masmtasm.ASM.assembler": "TASM", // MASM/TASM assembler.
     "vscode-office.openOutline": false, // Do not auto-open outline for Office files.
     "vscode-office.editorTheme": "Auto", // Office viewer theme.
-    "redhat.telemetry.enabled": true // Red Hat extension telemetry enabled.
+    "redhat.telemetry.enabled": true, // Red Hat extension telemetry enabled.
+    "chat.mcp.access": "all" // Enable access to all MCP features.
 }
